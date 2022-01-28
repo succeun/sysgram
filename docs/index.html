@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sysgram - Sysgram draw the system architecture using JavaScript.</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  
+  <style>
+	main {
+	  z-index: unset;
+	}
+	
+    .sysgram {
+	  text-align: center;
+	  border: 1px solid #aaa;
+	  width: 100%;
+	  height: 600px;
+	  border-radius: 8px;
+	  padding: 5px;
+	}
+	
+	footer {
+	  text-align: center;
+	}
+	
+	.resource-image {
+		height: 40px;
+		vertical-align: middle;
+		float: right;
+		top: 5px;
+		position: relative;
+		background-color: #f9f9f9;
+		border-radius: 8px;
+	}
+	
+	.resource li {
+		width: 650px;
+		line-height: 50px;
+	}
+  </style>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY16EZMCRY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZY16EZMCRY');
+  </script>
+
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'Sysgram',
+      repo: 'https://github.com/succeun/sysgram',
+	  //logo: 'images/logo.png',
+	  loadSidebar: true,
+	  alias: {
+	    '/.*/_sidebar.md': '/_sidebar.md'
+      },
+	  auto2top: true,
+	  themeColor: '#3F51B5',
+	  maxLevel: 4,
+      //subMaxLevel: 2,
+	  executeScript: true,
+	  plugins: [
+		function(hook, vm) {
+			hook.afterEach(function (html, next) {
+				// We load the HTML inside a DOM node to allow for manipulation
+				var htmlElement = document.createElement('div');
+				htmlElement.innerHTML = html;
+				
+				htmlElement.querySelectorAll('pre[data-lang=js]').forEach((element, index) => {
+					// Create a <div class="sysgram"> to replace the <pre> 
+					var replacement = document.createElement('div');
+					replacement.textContent = element.textContent;
+					replacement.classList.add('sysgram');
+
+					// Replace
+					element.parentNode.insertBefore(replacement, element.nextSibling);
+				});
+
+				next(htmlElement.innerHTML);
+			});
+
+			hook.doneEach(function () {
+				var attrs = {
+					fullscreen: {
+						enable: true
+					}
+				};
+				sysgram.init('.sysgram', attrs);
+			});
+		},
+		function(hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span>Proudly published with <a href="https://docsify.js.org" target="_blank">docsify</a>.</span>',
+            '</footer>'
+          ].join('');
+
+          hook.afterEach(function(html) {
+            return html + footer;
+          });
+        }
+	  ],
+    }
+	
+	function listResources(resourceName, baseUrl) {
+		setTimeout(function() {
+			var main = document.querySelector('#main');
+			var lines = [];
+			var diagrams = sysgram.loadResources();
+			var resources = diagrams[resourceName];
+			
+			for (var x in resources) {
+				var id = resourceName + x;	// ex: onpremaggregator
+				var path = resourceName + "." + x;	// ex: onprem.aggregator
+				lines.push('<h2 id="'+id+'"><a href="#/nodes/'+resourceName+'?id='+id+'" data-id="'+id+'" class="anchor"><span>'+path+'</span></a></h2>');
+				lines.push('<ul>');
+				for (var y in resources[x]) {
+					var p = 'diagrams.'+path+'.'+y;
+					var image = resources[x][y].imageURL;
+					lines.push('<li><strong>'+p+'</strong> <img class="resource-image" src="'+image+'" loading="lazy"></li>');
+				}
+				lines.push('</ul>');
+			}
+			
+			var fragment = document.createDocumentFragment();
+			var div = document.createElement('div');
+			fragment.appendChild(div);
+			div.innerHTML = lines.join("\n");
+			div.className = "resource";
+			
+			main.insertBefore(fragment.querySelector('div'), main.querySelector('hr'));
+		}, 500);
+	}
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  
+  <!-- sysgram (latest) -->
+  <script src="https://unpkg.com/sysgram/dist/sysgram.js"></script>
+  <!--script src="../dist/sysgram.bundle.js"></script-->
+  
+</body>
+</html>

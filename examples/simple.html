@@ -1,0 +1,59 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body {
+			margin: 40px;
+		}
+		
+		.sysgram {
+			text-align: center; 
+			border: 1px solid #444;
+			width: 700px;
+			height: 400px;
+			margin-left: 50px;
+		}
+	</style>
+	
+	<script src="../dist/sysgram.bundle.js"></script>
+	
+	<script>
+		sysgram.initialize({ startOnLoad: true, graphviz: {zoom: false} });
+	</script>
+</head>
+<body>
+	<h1>Sysgram Examples</h1>
+	
+	<h2>Grouped Workers on AWS</h2>
+	<div class="sysgram">
+ctx.attributes.digraph.splines = 'curved'
+
+var EC2 = diagrams.aws.compute.EC2
+var RDS = diagrams.aws.database.RDS
+var ELB = diagrams.aws.network.ELB
+
+Diagram("Grouped Workers", function() {
+	ELB("lb")._$([EC2("worker1"), 
+				EC2("worker2"),
+				EC2("worker3"),
+				EC2("worker4"),
+				EC2("worker5")])._$(RDS("events"))
+}, {rankdir: "TB"})
+	</div>
+	
+	<h2>Exposed Pod with 3 Replicas on Kubernetes</h2>
+	<div class="sysgram">
+var HPA = diagrams.k8s.clusterconfig.HPA
+var { Deployment, Pod, ReplicaSet }  = diagrams.k8s.compute
+var { Ingress, Service } = diagrams.k8s.network
+
+Diagram("Exposed Pod with 3 Replicas", () => {
+	ctx.net = Ingress("domain.com")._$(Service("svc"))
+    ctx.net._$([Pod("pod1"),
+            Pod("pod2"),
+            Pod("pod3")]).$_(ReplicaSet("rs")).$_(Deployment("dp")).$_(HPA("hpa"))
+})
+	</div>
+</body>
+</html>
