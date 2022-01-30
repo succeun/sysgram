@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>sysgram - Sysgram draw the system architecture using JavaScript.</title>
+  <title>sysgram.js - Sysgram.js draw the system architecture using JavaScript.</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -57,7 +57,7 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'Sysgram',
+      name: 'Sysgram.js',
       repo: 'https://github.com/succeun/sysgram',
 	  //logo: 'images/logo.png',
 	  loadSidebar: true,
@@ -149,6 +149,12 @@
   <!-- sysgram (latest) -->
   <!--script src="https://unpkg.com/sysgram/dist/sysgram.js"></script-->
   <!--script src="../dist/sysgram.bundle.js"></script-->
-  <script src="https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.js"></script>
+  <!--script src="https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.js"></script-->
+  
+  <script>
+	var script = document.createElement('script');
+    script.src = location.hostname == '127.0.0.1' ? '../dist/sysgram.bundle.js' : 'https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.js';
+    document.write(script.outerHTML);
+  </script>
 </body>
 </html>

@@ -14,7 +14,7 @@ The setting information is divided into the following areas.
 - `graphviz`: Options of [D3-graphviz](https://github.com/magjac/d3-graphviz#supported-options)
 - `iconSize`: Size of Icon image
 - `toImage`: Options for image conversion
-- `selector`: CSS selector to find the Sysgram
+- `selector`: CSS selector to find the Sysgram.js
 - `startOnLoad`: Whether to navigate and handle in the window's DOMContentLoaded event
 
 ### Default Configuration(Attributes)

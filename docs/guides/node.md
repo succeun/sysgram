@@ -94,7 +94,7 @@ The connect function below is shaped like an arrow.
 * `$_$()`: Connect nodes in both direction. (like `<->`)
 * `_()`: Connect nodes in no direction. Undirected. (like `-`)
 
-?> [Diagrams using Python](https://diagrams.mingrammer.com/) used operator overloading, but **Sysgram** was implemented as a function due to JavaScript syntax limitations.
+?> [Diagrams using Python](https://diagrams.mingrammer.com/) used operator overloading, but **Sysgram.js** was implemented as a function due to JavaScript syntax limitations.
 
 ```js
 var { EC2 } = diagrams.aws.compute
@@ -188,7 +188,7 @@ Diagram("Grouped Workers", () => {
 })
 ```
 
-?> Sysgrams is supported that can connect two **Arrays**.
+?> Sysgram.jss is supported that can connect two **Arrays**.
 
 ```js
 var { EC2 } = diagrams.aws.compute

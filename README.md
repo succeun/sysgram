@@ -1,6 +1,6 @@
 # About
 
-**Sysgram draw the system architecture using JavaScript.**
+**Sysgram.js draw the system architecture using JavaScript.**
 
 [![npm version](https://img.shields.io/npm/v/sysgram.svg?style=flat)](https://www.npmjs.com/package/sysgram)
 [![unpkg](https://img.badgesize.io/https://unpkg.com/sysgram/dist/sysgram.js?compression=gzip&label=unpkg&style=flat&cache=false)](https://unpkg.com/sysgram/dist/sysgram.js)
@@ -9,7 +9,7 @@
 It is a Javascript based diagramming tool that renders from javascript syntax to create and modify diagrams dynamically. 
 
 
-## Sysgram currently supports seven major providers and others: 
+## Sysgram.js currently supports seven major providers and others: 
 - [`AWS`](https://succeun.github.io/sysgram/#/nodes/aws)
 - [`Azure`](https://succeun.github.io/sysgram/#/nodes/azure)
 - [`GCP`](https://succeun.github.io/sysgram/#/nodes/gcp)

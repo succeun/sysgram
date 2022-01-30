@@ -1,7 +1,7 @@
 {
-	"name": "sysgram",
+	"name": "sysgram.js",
 	"version": "0.1.0",
-	"description": "Sysgram draw the system architecture using JavaScript.",
+	"description": "Sysgram.js draw the system architecture using JavaScript.",
 	"main": "dist/sysgram.bundle.js",
 	"unpkg": "dist/sysgram.min.bundle.js",
 	"files": [
@@ -15,7 +15,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/succeun/sysgram"
+		"url": "https://github.com/succeun/sysgram.js"
 	},
 	"keywords": [
 		"d3",
@@ -30,9 +30,9 @@
 	"author": "Jeong-Ho, Eun",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/succeun/sysgram/issues"
+		"url": "https://github.com/succeun/sysgram.js/issues"
 	},
-	"homepage": "https://succeun.github.io/sysgram",
+	"homepage": "https://succeun.github.io/sysgram.js",
 	"dependencies": {
 		"canvg": "3.0.7",
 		"d3": "6.7.0",

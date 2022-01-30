@@ -1,13 +1,13 @@
-# About Sysgram
+# About Sysgram.js
 
-**Sysgram draw the system architecture using JavaScript.**
+**Sysgram.js draw the system architecture using JavaScript.**
 
-Sysgram was developed inspired by [Diagrams using Python](https://diagrams.mingrammer.com/), thanks to [mingrammer(MinJae Kwon)](https://github.com/mingrammer).
+Sysgram.js was developed inspired by [Diagrams using Python](https://diagrams.mingrammer.com/), thanks to [mingrammer(MinJae Kwon)](https://github.com/mingrammer).
 
 It is a Javascript based diagramming tool that renders text like Markdown definitions to create and modify diagrams dynamically. 
 
 
-?> Sysgram currently supports six major providers: [`AWS`](nodes/aws), [`Azure`](nodes/azure), [`GCP`](nodes/gcp), [`Kubernetes`](nodes/k8s), [`Alibaba Cloud`](nodes/alibabacloud) and [`Oracle Cloud`](nodes/oci). <br>
+?> Sysgram.js currently supports six major providers: [`AWS`](nodes/aws), [`Azure`](nodes/azure), [`GCP`](nodes/gcp), [`Kubernetes`](nodes/k8s), [`Alibaba Cloud`](nodes/alibabacloud) and [`Oracle Cloud`](nodes/oci). <br>
 It now also supports [`On-Premise`](nodes/onprem) nodes as well as [`Programming Languages`](nodes/programming?id=programminglanguage), [`Frameworks`](nodes/programming?id=programmingframework) and [`Programs`](nodes/program).
 
 

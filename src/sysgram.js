@@ -1036,7 +1036,7 @@ function initialize(attributes, callbackFunc) {
 				init(selector, attributes);
 			});
 		} else {
-			console.warn("Sysgram is already running on load.");
+			console.warn("Sysgram.js is already running on load.");
 		}
 		isLoaded = true;
 	} else {
@@ -1352,7 +1352,7 @@ function printError(e, script) {
 				var lines = script.split("\n");
 				var line = lines[row - 1];
 				console.log(
-`${ansi.blue}Sysgram Script Error: ${ansi.red}${e.message}
+`${ansi.blue}Sysgram.js Script Error: ${ansi.red}${e.message}
 ${ansi.blue}[${row}:${col}] ${ansi.red}${line}
 ${" ".repeat(4 + match[1].length + match[2].length) + toSpace(line, col - 1)}^^^`);
 				
