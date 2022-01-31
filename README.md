@@ -20,7 +20,7 @@ It is a Javascript based diagramming tool that renders from javascript syntax to
 - [`On-Premise`](https://succeun.github.io/sysgram.js/#/nodes/onprem) 
 - [`Programming Languages`](https://succeun.github.io/sysgram.js/#/nodes/programming?id=programminglanguage)
 - [`Frameworks`](https://succeun.github.io/sysgram.js/#/nodes/programming?id=programmingframework)
-- [`Programs`](https://succeun.github.io/sysgram.js/#/nodes/program).
+- [`Programs`](https://succeun.github.io/sysgram.js/#/nodes/program)
  
 # Installation
 
