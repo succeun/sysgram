@@ -10,17 +10,17 @@ It is a Javascript based diagramming tool that renders from javascript syntax to
 
 
 ## Sysgram.js currently supports seven major providers and others: 
-- [`AWS`](https://succeun.github.io/sysgram/#/nodes/aws)
-- [`Azure`](https://succeun.github.io/sysgram/#/nodes/azure)
-- [`GCP`](https://succeun.github.io/sysgram/#/nodes/gcp)
-- [`Kubernetes`](https://succeun.github.io/sysgram/#/nodes/k8s)
-- [`Alibaba Cloud`](https://succeun.github.io/sysgram/#/nodes/alibabacloud)
-- [`Oracle Cloud`](https://succeun.github.io/sysgram/#/nodes/ibmcloud)
-- [`IBM Cloud`](https://succeun.github.io/sysgram/#/nodes/oci)
-- [`On-Premise`](https://succeun.github.io/sysgram/#/nodes/onprem) 
-- [`Programming Languages`](https://succeun.github.io/sysgram/#/nodes/programming?id=programminglanguage)
-- [`Frameworks`](https://succeun.github.io/sysgram/#/nodes/programming?id=programmingframework)
-- [`Programs`](https://succeun.github.io/sysgram/#/nodes/program).
+- [`AWS`](https://succeun.github.io/sysgram.js/#/nodes/aws)
+- [`Azure`](https://succeun.github.io/sysgram.js/#/nodes/azure)
+- [`GCP`](https://succeun.github.io/sysgram.js/#/nodes/gcp)
+- [`Kubernetes`](https://succeun.github.io/sysgram.js/#/nodes/k8s)
+- [`Alibaba Cloud`](https://succeun.github.io/sysgram.js/#/nodes/alibabacloud)
+- [`Oracle Cloud`](https://succeun.github.io/sysgram.js/#/nodes/ibmcloud)
+- [`IBM Cloud`](https://succeun.github.io/sysgram.js/#/nodes/oci)
+- [`On-Premise`](https://succeun.github.io/sysgram.js/#/nodes/onprem) 
+- [`Programming Languages`](https://succeun.github.io/sysgram.js/#/nodes/programming?id=programminglanguage)
+- [`Frameworks`](https://succeun.github.io/sysgram.js/#/nodes/programming?id=programmingframework)
+- [`Programs`](https://succeun.github.io/sysgram.js/#/nodes/program).
  
 # Installation
 
@@ -128,7 +128,7 @@ Diagram("Web Service", function() {
     ELB("lb")._$(EC2("web"))._$(RDS("userdb"))
 })
 ```
-![Web Service](https://succeun.github.io/sysgram/images/simple_diagram.png)
+![Web Service](https://succeun.github.io/sysgram.js/images/simple_diagram.png)
 
 ## Complex Diagram
 
@@ -172,9 +172,9 @@ Diagram("Message Collecting", () => {
 })
 ```
 
-![Message Collecting](https://succeun.github.io/sysgram/images/complex_diagram.png)
+![Message Collecting](https://succeun.github.io/sysgram.js/images/complex_diagram.png)
 
-**Examples can be found in** [examples](https://succeun.github.io/sysgram/#/getting-started/examples), [advanced examples](https://succeun.github.io/sysgram/#/getting-started/advanced_examples)
+**Examples can be found in** [examples](https://succeun.github.io/sysgram.js/#/getting-started/examples), [advanced examples](https://succeun.github.io/sysgram.js/#/getting-started/advanced_examples)
 
 ## Credits
 
