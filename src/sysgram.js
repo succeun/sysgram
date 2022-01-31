@@ -9,7 +9,7 @@ import diagramResources from "./sysgram-resources";
 // version : ${SYSDIAGRAM_VERSION}
 // authors : Jeong-Ho, Eun
 // license : MIT
-// https://succeun.github.io/sysgram
+// https://succeun.github.io/sysgram.js
 
 // Ansi Color for Console log
 var ansi = {
