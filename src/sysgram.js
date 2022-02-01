@@ -3,7 +3,41 @@ import * as d3 from 'd3-selection';
 import * as d3Graphviz from 'd3-graphviz';
 const _ = d3Graphviz.graphviz;
 
-import diagramResources from "./sysgram-resources";
+import alibabacloud from "./resources/alibabacloud";
+import aws from "./resources/aws";
+import azure from "./resources/azure";
+import elastic from "./resources/elastic";
+import firebase from "./resources/firebase";
+import gcp from "./resources/gcp";
+import generic from "./resources/generic";
+import ibm from "./resources/ibm";
+import k8s from "./resources/k8s";
+import oci from "./resources/oci";
+import onprem from "./resources/onprem";
+import openstack from "./resources/openstack";
+import outscale from "./resources/outscale";
+import programming from "./resources/programming";
+import saas from "./resources/saas";
+import additional from "./resources/additional";
+
+var diagramResources = {
+	...alibabacloud, 
+	...aws, 
+	...azure, 
+	...elastic, 
+	...firebase, 
+	...gcp, 
+	...generic, 
+	...ibm, 
+	...k8s, 
+	...oci, 
+	...onprem, 
+	...openstack, 
+	...outscale, 
+	...programming, 
+	...saas,
+	...additional 
+};
 
 // sysgram.js
 // version : ${SYSDIAGRAM_VERSION}

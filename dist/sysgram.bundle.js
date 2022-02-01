@@ -37538,7 +37538,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function getDiagramResources() {
+function getResources() {
   var resources = {
     baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
     alibabacloud: {
@@ -37656,7 +37656,104 @@ function getDiagramResources() {
         Dns: "dns.png",
         Domain: "domain.png"
       }
-    },
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "alibabacloud": {
+      "application": {
+        "LogService": "SLS",
+        "MessageNotificationService": "MNS",
+        "PerformanceTestingService": "PTS",
+        "SmartConversationAnalysis": "SCA"
+      },
+      "compute": {
+        "AutoScaling": "ESS",
+        "ElasticComputeService": "ECS",
+        "ElasticContainerInstance": "ECI",
+        "ElasticHighPerformanceComputing": "EHPC",
+        "FunctionCompute": "FC",
+        "OperationOrchestrationService": "OOS",
+        "ResourceOrchestrationService": "ROS",
+        "ServerLoadBalancer": "SLB",
+        "ServerlessAppEngine": "SAE",
+        "SimpleApplicationServer": "SAS",
+        "WebAppService": "WAS"
+      },
+      "database": {
+        "DataManagementService": "DMS",
+        "DataTransmissionService": "DTS",
+        "DatabaseBackupService": "DBS",
+        "DisributeRelationalDatabaseService": "DRDS",
+        "GraphDatabaseService": "GDS",
+        "RelationalDatabaseService": "RDS"
+      },
+      "network": {
+        "CloudEnterpriseNetwork": "CEN",
+        "ElasticIpAddress": "EIP",
+        "ServerLoadBalancer": "SLB",
+        "VirtualPrivateCloud": "VPC"
+      },
+      "security": {
+        "AntiBotService": "ABS",
+        "AntifraudService": "AS",
+        "CloudFirewall": "CFW",
+        "ContentModeration": "CM",
+        "DataEncryptionService": "DES",
+        "WebApplicationFirewall": "WAF"
+      },
+      "storage": {
+        "FileStorageHdfs": "HDFS",
+        "FileStorageNas": "NAS",
+        "HybridBackupRecovery": "HBR",
+        "HybridCloudDisasterRecovery": "HDR",
+        "ObjectStorageService": "OSS",
+        "ObjectTableStore": "OTS"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 523 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
     aws: {
       analytics: {
         Analytics: "analytics.png",
@@ -38184,7 +38281,144 @@ function getDiagramResources() {
         StorageGateway: "storage-gateway.png",
         Storage: "storage.png"
       }
-    },
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "aws": {
+      "analytics": {
+        "ElasticsearchService": "ES"
+      },
+      "business": {
+        "AlexaForBusiness": "A4B"
+      },
+      "blockchain": {
+        "QuantumLedgerDatabaseQldb": "QLDB"
+      },
+      "compute": {
+        "ApplicationAutoScaling": "AutoScaling",
+        "EC2Ami": "AMI",
+        "EC2ContainerRegistry": "ECR",
+        "ElasticBeanstalk": "EB",
+        "ElasticContainerService": "ECS",
+        "ElasticKubernetesService": "EKS",
+        "ServerlessApplicationRepository": "SAR"
+      },
+      "database": {
+        "DatabaseMigrationService": "DMS",
+        "DocumentdbMongodbCompatibility": "DocumentDB",
+        "DynamodbDax": "DAX",
+        "DynamodbGlobalSecondaryIndex": "DynamodbGSI",
+        "Database": "DB",
+        "Dynamodb": "DDB",
+        "Elasticache": "ElastiCache",
+        "QuantumLedgerDatabaseQldb": "QLDB"
+      },
+      "devtools": {
+        "CommandLineInterface": "CLI",
+        "DeveloperTools": "DevTools"
+      },
+      "engagement": {
+        "SimpleEmailServiceSes": "SES"
+      },
+      "general": {
+        "GenericOfficeBuilding": "OfficeBuilding"
+      },
+      "integration": {
+        "SimpleNotificationServiceSns": "SNS",
+        "SimpleQueueServiceSqs": "SQS",
+        "StepFunctions": "SF"
+      },
+      "iot": {
+        "Freertos": "FreeRTOS",
+        "IotHardwareBoard": "IotBoard"
+      },
+      "management": {
+        "SystemsManager": "SSM",
+        "SystemsManagerParameterStore": "ParameterStore"
+      },
+      "migration": {
+        "ApplicationDiscoveryService": "ADS",
+        "CloudendureMigration": "CEM",
+        "DatabaseMigrationService": "DMS",
+        "MigrationAndTransfer": "MAT",
+        "ServerMigrationService": "SMS"
+      },
+      "ml": {
+        "DeepLearningContainers": "DLC"
+      },
+      "network": {
+        "CloudFront": "CF",
+        "ElasticLoadBalancing": "ELB",
+        "ElbApplicationLoadBalancer": "ALB",
+        "ElbClassicLoadBalancer": "CLB",
+        "ElbNetworkLoadBalancer": "NLB",
+        "GlobalAccelerator": "GAX"
+      },
+      "security": {
+        "CertificateManager": "ACM",
+        "Cloudhsm": "CloudHSM",
+        "DirectoryService": "DS",
+        "FirewallManager": "FMS",
+        "IdentityAndAccessManagementIamAccessAnalyzer": "IAMAccessAnalyzer",
+        "IdentityAndAccessManagementIamAWSSts": "IAMAWSSts",
+        "IdentityAndAccessManagementIamPermissions": "IAMPermissions",
+        "IdentityAndAccessManagementIamRole": "IAMRole",
+        "IdentityAndAccessManagementIam": "IAM",
+        "KeyManagementService": "KMS",
+        "ResourceAccessManager": "RAM"
+      },
+      "storage": {
+        "CloudendureDisasterRecovery": "CDR",
+        "ElasticBlockStoreEBS": "EBS",
+        "ElasticFileSystemEFS": "EFS",
+        "Fsx": "FSx",
+        "SimpleStorageServiceS3": "S3"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 524 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
     azure: {
       analytics: {
         AnalysisServices: "analysis-services.png",
@@ -38409,7 +38643,60 @@ function getDiagramResources() {
         Search: "search.png",
         Signalr: "signalr.png"
       }
-    },
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "azure": {
+      "compute": {
+        "ContainerRegistries": "ACR",
+        "KubernetesServices": "AKS",
+        "VMScaleSet": "VMSS"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 525 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
     elastic: {
       elasticsearch: {
         Alerting: "alerting.png",
@@ -38449,7 +38736,58 @@ function getDiagramResources() {
         Security: "security.png",
         SIEM: "siem.png"
       }
-    },
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "elastic": {
+      "elasticsearch": {
+        "Logstash": "LogStash"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 526 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
     firebase: {
       base: {
         Firebase: "firebase.png"
@@ -38483,7 +38821,58 @@ function getDiagramResources() {
         PerformanceMonitoring: "performance-monitoring.png",
         TestLab: "test-lab.png"
       }
-    },
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "firebase": {
+      "grow": {
+        "Messaging": "FCM"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 527 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
     gcp: {
       analytics: {
         Bigquery: "bigquery.png",
@@ -38599,7 +38988,87 @@ function getDiagramResources() {
         PersistentDisk: "persistent-disk.png",
         Storage: "storage.png"
       }
-    },
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "gcp": {
+      "analytics": {
+        "Bigquery": "BigQuery",
+        "Pubsub": "PubSub"
+      },
+      "compute": {
+        "AppEngine": "GAE",
+        "Functions": "GCF",
+        "ComputeEngine": "GCE",
+        "KubernetesEngine": "GKE"
+      },
+      "database": {
+        "Bigtable": "BigTable"
+      },
+      "devtools": {
+        "ContainerRegistry": "GCR"
+      },
+      "ml": {
+        "Automl": "AutoML",
+        "NaturalLanguageAPI": "NLAPI",
+        "SpeechToText": "STT",
+        "TextToSpeech": "TTS"
+      },
+      "network": {
+        "VirtualPrivateCloud": "VPC"
+      },
+      "security": {
+        "KeyManagementService": "KMS",
+        "SecurityCommandCenter": "SCC"
+      },
+      "storage": {
+        "Storage": "GCS"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 528 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
     generic: {
       blank: {
         Blank: "blank.png"
@@ -38641,673 +39110,54 @@ function getDiagramResources() {
         Vmware: "vmware.png",
         XEN: "xen.png"
       }
-    },
-    k8s: {
-      chaos: {
-        ChaosMesh: "chaos-mesh.png",
-        LitmusChaos: "litmus-chaos.png"
-      },
-      clusterconfig: {
-        HPA: "hpa.png",
-        Limits: "limits.png",
-        Quota: "quota.png"
-      },
-      compute: {
-        Cronjob: "cronjob.png",
-        Deploy: "deploy.png",
-        DS: "ds.png",
-        Job: "job.png",
-        Pod: "pod.png",
-        RS: "rs.png",
-        STS: "sts.png"
-      },
-      controlplane: {
-        API: "api.png",
-        CCM: "c-c-m.png",
-        CM: "c-m.png",
-        KProxy: "k-proxy.png",
-        Kubelet: "kubelet.png",
-        Sched: "sched.png"
-      },
-      ecosystem: {
-        ExternalDns: "external-dns.png",
-        Helm: "helm.png",
-        Krew: "krew.png",
-        Kustomize: "kustomize.png"
-      },
-      group: {
-        NS: "ns.png"
-      },
-      infra: {
-        ETCD: "etcd.png",
-        Master: "master.png",
-        Node: "node.png"
-      },
-      network: {
-        Ep: "ep.png",
-        Ing: "ing.png",
-        Netpol: "netpol.png",
-        SVC: "svc.png"
-      },
-      others: {
-        CRD: "crd.png",
-        PSP: "psp.png"
-      },
-      podconfig: {
-        CM: "cm.png",
-        Secret: "secret.png"
-      },
-      rbac: {
-        CRole: "c-role.png",
-        CRB: "crb.png",
-        Group: "group.png",
-        RB: "rb.png",
-        Role: "role.png",
-        SA: "sa.png",
-        User: "user.png"
-      },
-      storage: {
-        PV: "pv.png",
-        PVC: "pvc.png",
-        SC: "sc.png",
-        Vol: "vol.png"
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "generic": {}
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
       }
-    },
-    oci: {
-      compute: {
-        AutoscaleWhite: "autoscale-white.png",
-        Autoscale: "autoscale.png",
-        BMWhite: "bm-white.png",
-        BM: "bm.png",
-        ContainerWhite: "container-white.png",
-        Container: "container.png",
-        FunctionsWhite: "functions-white.png",
-        Functions: "functions.png",
-        InstancePoolsWhite: "instance-pools-white.png",
-        InstancePools: "instance-pools.png",
-        OCIRWhite: "ocir-white.png",
-        OCIR: "ocir.png",
-        OKEWhite: "oke-white.png",
-        OKE: "oke.png",
-        VMWhite: "vm-white.png",
-        VM: "vm.png"
-      },
-      connectivity: {
-        BackboneWhite: "backbone-white.png",
-        Backbone: "backbone.png",
-        CDNWhite: "cdn-white.png",
-        CDN: "cdn.png",
-        CustomerDatacenter: "customer-datacenter.png",
-        CustomerDatacntrWhite: "customer-datacntr-white.png",
-        CustomerPremiseWhite: "customer-premise-white.png",
-        CustomerPremise: "customer-premise.png",
-        DisconnectedRegionsWhite: "disconnected-regions-white.png",
-        DisconnectedRegions: "disconnected-regions.png",
-        DNSWhite: "dns-white.png",
-        DNS: "dns.png",
-        FastConnectWhite: "fast-connect-white.png",
-        FastConnect: "fast-connect.png",
-        NATGatewayWhite: "nat-gateway-white.png",
-        NATGateway: "nat-gateway.png",
-        VPNWhite: "vpn-white.png",
-        VPN: "vpn.png"
-      },
-      database: {
-        AutonomousWhite: "autonomous-white.png",
-        Autonomous: "autonomous.png",
-        BigdataServiceWhite: "bigdata-service-white.png",
-        BigdataService: "bigdata-service.png",
-        DatabaseServiceWhite: "database-service-white.png",
-        DatabaseService: "database-service.png",
-        DataflowApacheWhite: "dataflow-apache-white.png",
-        DataflowApache: "dataflow-apache.png",
-        DcatWhite: "dcat-white.png",
-        Dcat: "dcat.png",
-        DisWhite: "dis-white.png",
-        Dis: "dis.png",
-        DMSWhite: "dms-white.png",
-        DMS: "dms.png",
-        ScienceWhite: "science-white.png",
-        Science: "science.png",
-        StreamWhite: "stream-white.png",
-        Stream: "stream.png"
-      },
-      devops: {
-        APIGatewayWhite: "api-gateway-white.png",
-        APIGateway: "api-gateway.png",
-        APIServiceWhite: "api-service-white.png",
-        APIService: "api-service.png",
-        ResourceMgmtWhite: "resource-mgmt-white.png",
-        ResourceMgmt: "resource-mgmt.png"
-      },
-      governance: {
-        AuditWhite: "audit-white.png",
-        Audit: "audit.png",
-        CompartmentsWhite: "compartments-white.png",
-        Compartments: "compartments.png",
-        GroupsWhite: "groups-white.png",
-        Groups: "groups.png",
-        LoggingWhite: "logging-white.png",
-        Logging: "logging.png",
-        OCIDWhite: "ocid-white.png",
-        OCID: "ocid.png",
-        PoliciesWhite: "policies-white.png",
-        Policies: "policies.png",
-        TaggingWhite: "tagging-white.png",
-        Tagging: "tagging.png"
-      },
-      monitoring: {
-        AlarmWhite: "alarm-white.png",
-        Alarm: "alarm.png",
-        EmailWhite: "email-white.png",
-        Email: "email.png",
-        EventsWhite: "events-white.png",
-        Events: "events.png",
-        HealthCheckWhite: "health-check-white.png",
-        HealthCheck: "health-check.png",
-        NotificationsWhite: "notifications-white.png",
-        Notifications: "notifications.png",
-        QueueWhite: "queue-white.png",
-        Queue: "queue.png",
-        SearchWhite: "search-white.png",
-        Search: "search.png",
-        TelemetryWhite: "telemetry-white.png",
-        Telemetry: "telemetry.png",
-        WorkflowWhite: "workflow-white.png",
-        Workflow: "workflow.png"
-      },
-      network: {
-        DrgWhite: "drg-white.png",
-        Drg: "drg.png",
-        FirewallWhite: "firewall-white.png",
-        Firewall: "firewall.png",
-        InternetGatewayWhite: "internet-gateway-white.png",
-        InternetGateway: "internet-gateway.png",
-        LoadBalancerWhite: "load-balancer-white.png",
-        LoadBalancer: "load-balancer.png",
-        RouteTableWhite: "route-table-white.png",
-        RouteTable: "route-table.png",
-        SecurityListsWhite: "security-lists-white.png",
-        SecurityLists: "security-lists.png",
-        ServiceGatewayWhite: "service-gateway-white.png",
-        ServiceGateway: "service-gateway.png",
-        VcnWhite: "vcn-white.png",
-        Vcn: "vcn.png"
-      },
-      security: {
-        CloudGuardWhite: "cloud-guard-white.png",
-        CloudGuard: "cloud-guard.png",
-        DDOSWhite: "ddos-white.png",
-        DDOS: "ddos.png",
-        EncryptionWhite: "encryption-white.png",
-        Encryption: "encryption.png",
-        IDAccessWhite: "id-access-white.png",
-        IDAccess: "id-access.png",
-        KeyManagementWhite: "key-management-white.png",
-        KeyManagement: "key-management.png",
-        MaxSecurityZoneWhite: "max-security-zone-white.png",
-        MaxSecurityZone: "max-security-zone.png",
-        VaultWhite: "vault-white.png",
-        Vault: "vault.png",
-        WAFWhite: "waf-white.png",
-        WAF: "waf.png"
-      },
-      storage: {
-        BackupRestoreWhite: "backup-restore-white.png",
-        BackupRestore: "backup-restore.png",
-        BlockStorageCloneWhite: "block-storage-clone-white.png",
-        BlockStorageClone: "block-storage-clone.png",
-        BlockStorageWhite: "block-storage-white.png",
-        BlockStorage: "block-storage.png",
-        BucketsWhite: "buckets-white.png",
-        Buckets: "buckets.png",
-        DataTransferWhite: "data-transfer-white.png",
-        DataTransfer: "data-transfer.png",
-        ElasticPerformanceWhite: "elastic-performance-white.png",
-        ElasticPerformance: "elastic-performance.png",
-        FileStorageWhite: "file-storage-white.png",
-        FileStorage: "file-storage.png",
-        ObjectStorageWhite: "object-storage-white.png",
-        ObjectStorage: "object-storage.png",
-        StorageGatewayWhite: "storage-gateway-white.png",
-        StorageGateway: "storage-gateway.png"
-      }
-    },
-    onprem: {
-      aggregator: {
-        Fluentd: "fluentd.png",
-        Vector: "vector.png"
-      },
-      analytics: {
-        Beam: "beam.png",
-        Databricks: "databricks.png",
-        Dbt: "dbt.png",
-        Flink: "flink.png",
-        Hadoop: "hadoop.png",
-        Hive: "hive.png",
-        Metabase: "metabase.png",
-        Norikra: "norikra.png",
-        Powerbi: "powerbi.png",
-        Presto: "presto.png",
-        Singer: "singer.png",
-        Spark: "spark.png",
-        Storm: "storm.png",
-        Superset: "superset.png",
-        Tableau: "tableau.png"
-      },
-      auth: {
-        Boundary: "boundary.png",
-        BuzzfeedSso: "buzzfeed-sso.png",
-        Oauth2Proxy: "oauth2-proxy.png"
-      },
-      cd: {
-        Spinnaker: "spinnaker.png",
-        TektonCli: "tekton-cli.png",
-        Tekton: "tekton.png"
-      },
-      certificates: {
-        CertManager: "cert-manager.png",
-        LetsEncrypt: "lets-encrypt.png"
-      },
-      ci: {
-        Circleci: "circleci.png",
-        Concourseci: "concourseci.png",
-        Droneci: "droneci.png",
-        GithubActions: "github-actions.png",
-        Gitlabci: "gitlabci.png",
-        Jenkins: "jenkins.png",
-        Teamcity: "teamcity.png",
-        Travisci: "travisci.png",
-        Zuulci: "zuulci.png"
-      },
-      client: {
-        Client: "client.png",
-        User: "user.png",
-        Users: "users.png"
-      },
-      compute: {
-        Nomad: "nomad.png",
-        Server: "server.png"
-      },
-      container: {
-        Containerd: "containerd.png",
-        Crio: "crio.png",
-        Docker: "docker.png",
-        Firecracker: "firecracker.png",
-        Gvisor: "gvisor.png",
-        Lxc: "lxc.png",
-        Rkt: "rkt.png"
-      },
-      database: {
-        Cassandra: "cassandra.png",
-        Clickhouse: "clickhouse.png",
-        Cockroachdb: "cockroachdb.png",
-        Couchbase: "couchbase.png",
-        Couchdb: "couchdb.png",
-        Dgraph: "dgraph.png",
-        Druid: "druid.png",
-        Hbase: "hbase.png",
-        Influxdb: "influxdb.png",
-        Janusgraph: "janusgraph.png",
-        Mariadb: "mariadb.png",
-        Mongodb: "mongodb.png",
-        Mssql: "mssql.png",
-        Mysql: "mysql.png",
-        Neo4J: "neo4j.png",
-        Oracle: "oracle.png",
-        Postgresql: "postgresql.png",
-        Scylla: "scylla.png"
-      },
-      dns: {
-        Coredns: "coredns.png",
-        Powerdns: "powerdns.png"
-      },
-      etl: {
-        Embulk: "embulk.png"
-      },
-      gitops: {
-        Argocd: "argocd.png",
-        Flagger: "flagger.png",
-        Flux: "flux.png"
-      },
-      groupware: {
-        Nextcloud: "nextcloud.png"
-      },
-      iac: {
-        Ansible: "ansible.png",
-        Atlantis: "atlantis.png",
-        Awx: "awx.png",
-        Puppet: "puppet.png",
-        Terraform: "terraform.png"
-      },
-      identity: {
-        Dex: "dex.png"
-      },
-      inmemory: {
-        Aerospike: "aerospike.png",
-        Hazelcast: "hazelcast.png",
-        Memcached: "memcached.png",
-        Redis: "redis.png"
-      },
-      logging: {
-        Fluentbit: "fluentbit.png",
-        Graylog: "graylog.png",
-        Loki: "loki.png",
-        Rsyslog: "rsyslog.png",
-        SyslogNg: "syslog-ng.png"
-      },
-      mlops: {
-        Polyaxon: "polyaxon.png"
-      },
-      monitoring: {
-        Cortex: "cortex.png",
-        Datadog: "datadog.png",
-        Dynatrace: "dynatrace.png",
-        Grafana: "grafana.png",
-        Humio: "humio.png",
-        Newrelic: "newrelic.png",
-        PrometheusOperator: "prometheus-operator.png",
-        Prometheus: "prometheus.png",
-        Sentry: "sentry.png",
-        Splunk: "splunk.png",
-        Thanos: "thanos.png",
-        Zabbix: "zabbix.png"
-      },
-      network: {
-        Ambassador: "ambassador.png",
-        Apache: "apache.png",
-        Bind9: "bind-9.png",
-        Caddy: "caddy.png",
-        Consul: "consul.png",
-        Envoy: "envoy.png",
-        Etcd: "etcd.png",
-        Glassfish: "glassfish.png",
-        Gunicorn: "gunicorn.png",
-        Haproxy: "haproxy.png",
-        Internet: "internet.png",
-        Istio: "istio.png",
-        Jbossas: "jbossas.png",
-        Jetty: "jetty.png",
-        Kong: "kong.png",
-        Linkerd: "linkerd.png",
-        Nginx: "nginx.png",
-        Ocelot: "ocelot.png",
-        OpenServiceMesh: "open-service-mesh.png",
-        Opnsense: "opnsense.png",
-        Pfsense: "pfsense.png",
-        Pomerium: "pomerium.png",
-        Powerdns: "powerdns.png",
-        Tomcat: "tomcat.png",
-        Traefik: "traefik.png",
-        Tyk: "tyk.png",
-        Vyos: "vyos.png",
-        Wildfly: "wildfly.png",
-        Zookeeper: "zookeeper.png"
-      },
-      proxmox: {
-        Pve: "pve.png"
-      },
-      queue: {
-        Activemq: "activemq.png",
-        Celery: "celery.png",
-        Kafka: "kafka.png",
-        Nats: "nats.png",
-        Rabbitmq: "rabbitmq.png",
-        Zeromq: "zeromq.png"
-      },
-      search: {
-        Solr: "solr.png"
-      },
-      security: {
-        Bitwarden: "bitwarden.png",
-        Trivy: "trivy.png",
-        Vault: "vault.png"
-      },
-      storage: {
-        CephOsd: "ceph-osd.png",
-        Ceph: "ceph.png",
-        Glusterfs: "glusterfs.png"
-      },
-      tracing: {
-        Jaeger: "jaeger.png"
-      },
-      vcs: {
-        Git: "git.png",
-        Gitea: "gitea.png",
-        Github: "github.png",
-        Gitlab: "gitlab.png",
-        Svn: "svn.png"
-      },
-      workflow: {
-        Airflow: "airflow.png",
-        Digdag: "digdag.png",
-        Kubeflow: "kubeflow.png",
-        Nifi: "nifi.png"
-      }
-    },
-    openstack: {
-      apiproxies: {
-        EC2API: "ec2api.png"
-      },
-      applicationlifecycle: {
-        Freezer: "freezer.png",
-        Masakari: "masakari.png",
-        Murano: "murano.png",
-        Solum: "solum.png"
-      },
-      baremetal: {
-        Cyborg: "cyborg.png",
-        Ironic: "ironic.png"
-      },
-      billing: {
-        Cloudkitty: "cloudkitty.png"
-      },
-      compute: {
-        Nova: "nova.png",
-        Qinling: "qinling.png",
-        Zun: "zun.png"
-      },
-      containerservices: {
-        Kuryr: "kuryr.png"
-      },
-      deployment: {
-        Ansible: "ansible.png",
-        Charms: "charms.png",
-        Chef: "chef.png",
-        Helm: "helm.png",
-        Kolla: "kolla.png",
-        Tripleo: "tripleo.png"
-      },
-      frontend: {
-        Horizon: "horizon.png"
-      },
-      monitoring: {
-        Monasca: "monasca.png",
-        Telemetry: "telemetry.png"
-      },
-      multiregion: {
-        Tricircle: "tricircle.png"
-      },
-      networking: {
-        Designate: "designate.png",
-        Neutron: "neutron.png",
-        Octavia: "octavia.png"
-      },
-      nfv: {
-        Tacker: "tacker.png"
-      },
-      optimization: {
-        Congress: "congress.png",
-        Rally: "rally.png",
-        Vitrage: "vitrage.png",
-        Watcher: "watcher.png"
-      },
-      orchestration: {
-        Blazar: "blazar.png",
-        Heat: "heat.png",
-        Mistral: "mistral.png",
-        Senlin: "senlin.png",
-        Zaqar: "zaqar.png"
-      },
-      packaging: {
-        LOCI: "loci.png",
-        Puppet: "puppet.png",
-        RPM: "rpm.png"
-      },
-      sharedservices: {
-        Barbican: "barbican.png",
-        Glance: "glance.png",
-        Karbor: "karbor.png",
-        Keystone: "keystone.png",
-        Searchlight: "searchlight.png"
-      },
-      storage: {
-        Cinder: "cinder.png",
-        Manila: "manila.png",
-        Swift: "swift.png"
-      },
-      user: {
-        Openstackclient: "openstackclient.png"
-      },
-      workloadprovisioning: {
-        Magnum: "magnum.png",
-        Sahara: "sahara.png",
-        Trove: "trove.png"
-      }
-    },
-    outscale: {
-      compute: {
-        Compute: "compute.png",
-        DirectConnect: "direct-connect.png"
-      },
-      network: {
-        ClientVpn: "client-vpn.png",
-        InternetService: "internet-service.png",
-        LoadBalancer: "load-balancer.png",
-        NatService: "nat-service.png",
-        Net: "net.png",
-        SiteToSiteVpng: "site-to-site-vpng.png"
-      },
-      security: {
-        Firewall: "firewall.png",
-        IdentityAndAccessManagement: "identity-and-access-management.png"
-      },
-      storage: {
-        SimpleStorageService: "simple-storage-service.png",
-        Storage: "storage.png"
-      }
-    },
-    programming: {
-      flowchart: {
-        Action: "action.png",
-        Collate: "collate.png",
-        Database: "database.png",
-        Decision: "decision.png",
-        Delay: "delay.png",
-        Display: "display.png",
-        Document: "document.png",
-        InputOutput: "input-output.png",
-        Inspection: "inspection.png",
-        InternalStorage: "internal-storage.png",
-        LoopLimit: "loop-limit.png",
-        ManualInput: "manual-input.png",
-        ManualLoop: "manual-loop.png",
-        Merge: "merge.png",
-        MultipleDocuments: "multiple-documents.png",
-        OffPageConnectorLeft: "off-page-connector-left.png",
-        OffPageConnectorRight: "off-page-connector-right.png",
-        Or: "or.png",
-        PredefinedProcess: "predefined-process.png",
-        Preparation: "preparation.png",
-        Sort: "sort.png",
-        StartEnd: "start-end.png",
-        StoredData: "stored-data.png",
-        SummingJunction: "summing-junction.png"
-      },
-      framework: {
-        Angular: "angular.png",
-        Backbone: "backbone.png",
-        Django: "django.png",
-        Ember: "ember.png",
-        Fastapi: "fastapi.png",
-        Flask: "flask.png",
-        Flutter: "flutter.png",
-        Laravel: "laravel.png",
-        Micronaut: "micronaut.png",
-        Rails: "rails.png",
-        React: "react.png",
-        Spring: "spring.png",
-        Vue: "vue.png"
-      },
-      language: {
-        Bash: "bash.png",
-        C: "c.png",
-        Cpp: "cpp.png",
-        Csharp: "csharp.png",
-        Dart: "dart.png",
-        Elixir: "elixir.png",
-        Erlang: "erlang.png",
-        Go: "go.png",
-        Java: "java.png",
-        Javascript: "javascript.png",
-        Kotlin: "kotlin.png",
-        Matlab: "matlab.png",
-        Nodejs: "nodejs.png",
-        Php: "php.png",
-        Python: "python.png",
-        R: "r.png",
-        Ruby: "ruby.png",
-        Rust: "rust.png",
-        Scala: "scala.png",
-        Swift: "swift.png",
-        Typescript: "typescript.png"
-      }
-    },
-    saas: {
-      alerting: {
-        Newrelic: "newrelic.png",
-        Opsgenie: "opsgenie.png",
-        Pushover: "pushover.png"
-      },
-      analytics: {
-        Snowflake: "snowflake.png",
-        Stitch: "stitch.png"
-      },
-      cdn: {
-        Akamai: "akamai.png",
-        Cloudflare: "cloudflare.png"
-      },
-      chat: {
-        Discord: "discord.png",
-        Mattermost: "mattermost.png",
-        RocketChat: "rocket-chat.png",
-        Slack: "slack.png",
-        Teams: "teams.png",
-        Telegram: "telegram.png"
-      },
-      filesharing: {
-        Nextcloud: "nextcloud.png"
-      },
-      identity: {
-        Auth0: "auth0.png",
-        Okta: "okta.png"
-      },
-      logging: {
-        Datadog: "datadog.png",
-        Newrelic: "newrelic.png",
-        Papertrail: "papertrail.png"
-      },
-      media: {
-        Cloudinary: "cloudinary.png"
-      },
-      recommendation: {
-        Recombee: "recombee.png"
-      },
-      social: {
-        Facebook: "facebook.png",
-        Twitter: "twitter.png"
-      }
-    },
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 529 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
     "ibm": {
       "analytics": {
         Analytics: "analytics.png",
@@ -39522,6 +39372,666 @@ function getDiagramResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
+    "ibm": {
+      "network": {
+        "ACL": "Rules",
+        "CIS": "InternetServices",
+        "DL": "DirectLink",
+        "FIP": "FloatingIp",
+        "FloatingIP": "FloatingIp",
+        "FW": "Firewall",
+        "LB": "LoadBalancer",
+        "NLB": "LoadBalancer",
+        "PublicGateway": "Gateway",
+        "SecurityGroupRules": "Rules",
+        "TG": "TransitGateway",
+        "VPC": "Vpc",
+        "VPNGateway": "VpnGateway",
+        "VPNConnection": "VpnConnection",
+        "VPNPolicy": "VpnPolicy"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 530 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
+    k8s: {
+      chaos: {
+        ChaosMesh: "chaos-mesh.png",
+        LitmusChaos: "litmus-chaos.png"
+      },
+      clusterconfig: {
+        HPA: "hpa.png",
+        Limits: "limits.png",
+        Quota: "quota.png"
+      },
+      compute: {
+        Cronjob: "cronjob.png",
+        Deploy: "deploy.png",
+        DS: "ds.png",
+        Job: "job.png",
+        Pod: "pod.png",
+        RS: "rs.png",
+        STS: "sts.png"
+      },
+      controlplane: {
+        API: "api.png",
+        CCM: "c-c-m.png",
+        CM: "c-m.png",
+        KProxy: "k-proxy.png",
+        Kubelet: "kubelet.png",
+        Sched: "sched.png"
+      },
+      ecosystem: {
+        ExternalDns: "external-dns.png",
+        Helm: "helm.png",
+        Krew: "krew.png",
+        Kustomize: "kustomize.png"
+      },
+      group: {
+        NS: "ns.png"
+      },
+      infra: {
+        ETCD: "etcd.png",
+        Master: "master.png",
+        Node: "node.png"
+      },
+      network: {
+        Ep: "ep.png",
+        Ing: "ing.png",
+        Netpol: "netpol.png",
+        SVC: "svc.png"
+      },
+      others: {
+        CRD: "crd.png",
+        PSP: "psp.png"
+      },
+      podconfig: {
+        CM: "cm.png",
+        Secret: "secret.png"
+      },
+      rbac: {
+        CRole: "c-role.png",
+        CRB: "crb.png",
+        Group: "group.png",
+        RB: "rb.png",
+        Role: "role.png",
+        SA: "sa.png",
+        User: "user.png"
+      },
+      storage: {
+        PV: "pv.png",
+        PVC: "pvc.png",
+        SC: "sc.png",
+        Vol: "vol.png"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "k8s": {
+      "clusterconfig": {
+        "Limits": "LimitRange",
+        "HPA": "HorizontalPodAutoscaler"
+      },
+      "compute": {
+        "Deploy": "Deployment",
+        "DS": "DaemonSet",
+        "RS": "ReplicaSet",
+        "STS": "StatefulSet"
+      },
+      "controlplane": {
+        "API": "APIServer",
+        "CM": "ControllerManager",
+        "KProxy": "KubeProxy",
+        "Sched": "Scheduler"
+      },
+      "group": {
+        "NS": "Namespace"
+      },
+      "network": {
+        "Ep": "Endpoint",
+        "Ing": "Ingress",
+        "Netpol": "NetworkPolicy",
+        "SVC": "Service"
+      },
+      "podconfig": {
+        "CM": "ConfigMap"
+      },
+      "rbac": {
+        "CRole": "ClusterRole",
+        "CRB": "ClusterRoleBinding",
+        "RB": "RoleBinding",
+        "SA": "ServiceAccount"
+      },
+      "storage": {
+        "PV": "PersistentVolume",
+        "PVC": "PersistentVolumeClaim",
+        "SC": "StorageClass",
+        "Vol": "Volume"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 531 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
+    oci: {
+      compute: {
+        AutoscaleWhite: "autoscale-white.png",
+        Autoscale: "autoscale.png",
+        BMWhite: "bm-white.png",
+        BM: "bm.png",
+        ContainerWhite: "container-white.png",
+        Container: "container.png",
+        FunctionsWhite: "functions-white.png",
+        Functions: "functions.png",
+        InstancePoolsWhite: "instance-pools-white.png",
+        InstancePools: "instance-pools.png",
+        OCIRWhite: "ocir-white.png",
+        OCIR: "ocir.png",
+        OKEWhite: "oke-white.png",
+        OKE: "oke.png",
+        VMWhite: "vm-white.png",
+        VM: "vm.png"
+      },
+      connectivity: {
+        BackboneWhite: "backbone-white.png",
+        Backbone: "backbone.png",
+        CDNWhite: "cdn-white.png",
+        CDN: "cdn.png",
+        CustomerDatacenter: "customer-datacenter.png",
+        CustomerDatacntrWhite: "customer-datacntr-white.png",
+        CustomerPremiseWhite: "customer-premise-white.png",
+        CustomerPremise: "customer-premise.png",
+        DisconnectedRegionsWhite: "disconnected-regions-white.png",
+        DisconnectedRegions: "disconnected-regions.png",
+        DNSWhite: "dns-white.png",
+        DNS: "dns.png",
+        FastConnectWhite: "fast-connect-white.png",
+        FastConnect: "fast-connect.png",
+        NATGatewayWhite: "nat-gateway-white.png",
+        NATGateway: "nat-gateway.png",
+        VPNWhite: "vpn-white.png",
+        VPN: "vpn.png"
+      },
+      database: {
+        AutonomousWhite: "autonomous-white.png",
+        Autonomous: "autonomous.png",
+        BigdataServiceWhite: "bigdata-service-white.png",
+        BigdataService: "bigdata-service.png",
+        DatabaseServiceWhite: "database-service-white.png",
+        DatabaseService: "database-service.png",
+        DataflowApacheWhite: "dataflow-apache-white.png",
+        DataflowApache: "dataflow-apache.png",
+        DcatWhite: "dcat-white.png",
+        Dcat: "dcat.png",
+        DisWhite: "dis-white.png",
+        Dis: "dis.png",
+        DMSWhite: "dms-white.png",
+        DMS: "dms.png",
+        ScienceWhite: "science-white.png",
+        Science: "science.png",
+        StreamWhite: "stream-white.png",
+        Stream: "stream.png"
+      },
+      devops: {
+        APIGatewayWhite: "api-gateway-white.png",
+        APIGateway: "api-gateway.png",
+        APIServiceWhite: "api-service-white.png",
+        APIService: "api-service.png",
+        ResourceMgmtWhite: "resource-mgmt-white.png",
+        ResourceMgmt: "resource-mgmt.png"
+      },
+      governance: {
+        AuditWhite: "audit-white.png",
+        Audit: "audit.png",
+        CompartmentsWhite: "compartments-white.png",
+        Compartments: "compartments.png",
+        GroupsWhite: "groups-white.png",
+        Groups: "groups.png",
+        LoggingWhite: "logging-white.png",
+        Logging: "logging.png",
+        OCIDWhite: "ocid-white.png",
+        OCID: "ocid.png",
+        PoliciesWhite: "policies-white.png",
+        Policies: "policies.png",
+        TaggingWhite: "tagging-white.png",
+        Tagging: "tagging.png"
+      },
+      monitoring: {
+        AlarmWhite: "alarm-white.png",
+        Alarm: "alarm.png",
+        EmailWhite: "email-white.png",
+        Email: "email.png",
+        EventsWhite: "events-white.png",
+        Events: "events.png",
+        HealthCheckWhite: "health-check-white.png",
+        HealthCheck: "health-check.png",
+        NotificationsWhite: "notifications-white.png",
+        Notifications: "notifications.png",
+        QueueWhite: "queue-white.png",
+        Queue: "queue.png",
+        SearchWhite: "search-white.png",
+        Search: "search.png",
+        TelemetryWhite: "telemetry-white.png",
+        Telemetry: "telemetry.png",
+        WorkflowWhite: "workflow-white.png",
+        Workflow: "workflow.png"
+      },
+      network: {
+        DrgWhite: "drg-white.png",
+        Drg: "drg.png",
+        FirewallWhite: "firewall-white.png",
+        Firewall: "firewall.png",
+        InternetGatewayWhite: "internet-gateway-white.png",
+        InternetGateway: "internet-gateway.png",
+        LoadBalancerWhite: "load-balancer-white.png",
+        LoadBalancer: "load-balancer.png",
+        RouteTableWhite: "route-table-white.png",
+        RouteTable: "route-table.png",
+        SecurityListsWhite: "security-lists-white.png",
+        SecurityLists: "security-lists.png",
+        ServiceGatewayWhite: "service-gateway-white.png",
+        ServiceGateway: "service-gateway.png",
+        VcnWhite: "vcn-white.png",
+        Vcn: "vcn.png"
+      },
+      security: {
+        CloudGuardWhite: "cloud-guard-white.png",
+        CloudGuard: "cloud-guard.png",
+        DDOSWhite: "ddos-white.png",
+        DDOS: "ddos.png",
+        EncryptionWhite: "encryption-white.png",
+        Encryption: "encryption.png",
+        IDAccessWhite: "id-access-white.png",
+        IDAccess: "id-access.png",
+        KeyManagementWhite: "key-management-white.png",
+        KeyManagement: "key-management.png",
+        MaxSecurityZoneWhite: "max-security-zone-white.png",
+        MaxSecurityZone: "max-security-zone.png",
+        VaultWhite: "vault-white.png",
+        Vault: "vault.png",
+        WAFWhite: "waf-white.png",
+        WAF: "waf.png"
+      },
+      storage: {
+        BackupRestoreWhite: "backup-restore-white.png",
+        BackupRestore: "backup-restore.png",
+        BlockStorageCloneWhite: "block-storage-clone-white.png",
+        BlockStorageClone: "block-storage-clone.png",
+        BlockStorageWhite: "block-storage-white.png",
+        BlockStorage: "block-storage.png",
+        BucketsWhite: "buckets-white.png",
+        Buckets: "buckets.png",
+        DataTransferWhite: "data-transfer-white.png",
+        DataTransfer: "data-transfer.png",
+        ElasticPerformanceWhite: "elastic-performance-white.png",
+        ElasticPerformance: "elastic-performance.png",
+        FileStorageWhite: "file-storage-white.png",
+        FileStorage: "file-storage.png",
+        ObjectStorageWhite: "object-storage-white.png",
+        ObjectStorage: "object-storage.png",
+        StorageGatewayWhite: "storage-gateway-white.png",
+        StorageGateway: "storage-gateway.png"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "oci": {
+      "compute": {
+        "VM": "VirtualMachine",
+        "VMWhite": "VirtualMachineWhite",
+        "BM": "BareMetal",
+        "BMWhite": "BareMetalWhite",
+        "OCIR": "OCIRegistry",
+        "OCIRWhite": "OCIRegistryWhite",
+        "OKE": "ContainerEngine",
+        "OKEWhite": "ContainerEngineWhite"
+      },
+      "database": {
+        "Autonomous": "ADB",
+        "AutonomousWhite": "ADBWhite",
+        "DatabaseService": "DBService",
+        "DatabaseServiceWhite": "DBServiceWhite"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 532 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
+    onprem: {
+      aggregator: {
+        Fluentd: "fluentd.png",
+        Vector: "vector.png"
+      },
+      analytics: {
+        Beam: "beam.png",
+        Databricks: "databricks.png",
+        Dbt: "dbt.png",
+        Flink: "flink.png",
+        Hadoop: "hadoop.png",
+        Hive: "hive.png",
+        Metabase: "metabase.png",
+        Norikra: "norikra.png",
+        Powerbi: "powerbi.png",
+        Presto: "presto.png",
+        Singer: "singer.png",
+        Spark: "spark.png",
+        Storm: "storm.png",
+        Superset: "superset.png",
+        Tableau: "tableau.png"
+      },
+      auth: {
+        Boundary: "boundary.png",
+        BuzzfeedSso: "buzzfeed-sso.png",
+        Oauth2Proxy: "oauth2-proxy.png"
+      },
+      cd: {
+        Spinnaker: "spinnaker.png",
+        TektonCli: "tekton-cli.png",
+        Tekton: "tekton.png"
+      },
+      certificates: {
+        CertManager: "cert-manager.png",
+        LetsEncrypt: "lets-encrypt.png"
+      },
+      ci: {
+        Circleci: "circleci.png",
+        Concourseci: "concourseci.png",
+        Droneci: "droneci.png",
+        GithubActions: "github-actions.png",
+        Gitlabci: "gitlabci.png",
+        Jenkins: "jenkins.png",
+        Teamcity: "teamcity.png",
+        Travisci: "travisci.png",
+        Zuulci: "zuulci.png"
+      },
+      client: {
+        Client: "client.png",
+        User: "user.png",
+        Users: "users.png"
+      },
+      compute: {
+        Nomad: "nomad.png",
+        Server: "server.png"
+      },
+      container: {
+        Containerd: "containerd.png",
+        Crio: "crio.png",
+        Docker: "docker.png",
+        Firecracker: "firecracker.png",
+        Gvisor: "gvisor.png",
+        Lxc: "lxc.png",
+        Rkt: "rkt.png"
+      },
+      database: {
+        Cassandra: "cassandra.png",
+        Clickhouse: "clickhouse.png",
+        Cockroachdb: "cockroachdb.png",
+        Couchbase: "couchbase.png",
+        Couchdb: "couchdb.png",
+        Dgraph: "dgraph.png",
+        Druid: "druid.png",
+        Hbase: "hbase.png",
+        Influxdb: "influxdb.png",
+        Janusgraph: "janusgraph.png",
+        Mariadb: "mariadb.png",
+        Mongodb: "mongodb.png",
+        Mssql: "mssql.png",
+        Mysql: "mysql.png",
+        Neo4J: "neo4j.png",
+        Oracle: "oracle.png",
+        Postgresql: "postgresql.png",
+        Scylla: "scylla.png"
+      },
+      dns: {
+        Coredns: "coredns.png",
+        Powerdns: "powerdns.png"
+      },
+      etl: {
+        Embulk: "embulk.png"
+      },
+      gitops: {
+        Argocd: "argocd.png",
+        Flagger: "flagger.png",
+        Flux: "flux.png"
+      },
+      groupware: {
+        Nextcloud: "nextcloud.png"
+      },
+      iac: {
+        Ansible: "ansible.png",
+        Atlantis: "atlantis.png",
+        Awx: "awx.png",
+        Puppet: "puppet.png",
+        Terraform: "terraform.png"
+      },
+      identity: {
+        Dex: "dex.png"
+      },
+      inmemory: {
+        Aerospike: "aerospike.png",
+        Hazelcast: "hazelcast.png",
+        Memcached: "memcached.png",
+        Redis: "redis.png"
+      },
+      logging: {
+        Fluentbit: "fluentbit.png",
+        Graylog: "graylog.png",
+        Loki: "loki.png",
+        Rsyslog: "rsyslog.png",
+        SyslogNg: "syslog-ng.png"
+      },
+      mlops: {
+        Polyaxon: "polyaxon.png"
+      },
+      monitoring: {
+        Cortex: "cortex.png",
+        Datadog: "datadog.png",
+        Dynatrace: "dynatrace.png",
+        Grafana: "grafana.png",
+        Humio: "humio.png",
+        Newrelic: "newrelic.png",
+        PrometheusOperator: "prometheus-operator.png",
+        Prometheus: "prometheus.png",
+        Sentry: "sentry.png",
+        Splunk: "splunk.png",
+        Thanos: "thanos.png",
+        Zabbix: "zabbix.png"
+      },
+      network: {
+        Ambassador: "ambassador.png",
+        Apache: "apache.png",
+        Bind9: "bind-9.png",
+        Caddy: "caddy.png",
+        Consul: "consul.png",
+        Envoy: "envoy.png",
+        Etcd: "etcd.png",
+        Glassfish: "glassfish.png",
+        Gunicorn: "gunicorn.png",
+        Haproxy: "haproxy.png",
+        Internet: "internet.png",
+        Istio: "istio.png",
+        Jbossas: "jbossas.png",
+        Jetty: "jetty.png",
+        Kong: "kong.png",
+        Linkerd: "linkerd.png",
+        Nginx: "nginx.png",
+        Ocelot: "ocelot.png",
+        OpenServiceMesh: "open-service-mesh.png",
+        Opnsense: "opnsense.png",
+        Pfsense: "pfsense.png",
+        Pomerium: "pomerium.png",
+        Powerdns: "powerdns.png",
+        Tomcat: "tomcat.png",
+        Traefik: "traefik.png",
+        Tyk: "tyk.png",
+        Vyos: "vyos.png",
+        Wildfly: "wildfly.png",
+        Zookeeper: "zookeeper.png"
+      },
+      proxmox: {
+        Pve: "pve.png"
+      },
+      queue: {
+        Activemq: "activemq.png",
+        Celery: "celery.png",
+        Kafka: "kafka.png",
+        Nats: "nats.png",
+        Rabbitmq: "rabbitmq.png",
+        Zeromq: "zeromq.png"
+      },
+      search: {
+        Solr: "solr.png"
+      },
+      security: {
+        Bitwarden: "bitwarden.png",
+        Trivy: "trivy.png",
+        Vault: "vault.png"
+      },
+      storage: {
+        CephOsd: "ceph-osd.png",
+        Ceph: "ceph.png",
+        Glusterfs: "glusterfs.png"
+      },
+      tracing: {
+        Jaeger: "jaeger.png"
+      },
+      vcs: {
+        Git: "git.png",
+        Gitea: "gitea.png",
+        Github: "github.png",
+        Gitlab: "gitlab.png",
+        Svn: "svn.png"
+      },
+      workflow: {
+        Airflow: "airflow.png",
+        Digdag: "digdag.png",
+        Kubeflow: "kubeflow.png",
+        Nifi: "nifi.png"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
     "onprem": {
       "analytics": {
         "Powerbi": "PowerBI"
@@ -39583,281 +40093,143 @@ function getDiagramResources() {
         "Kubeflow": "KubeFlow",
         "Nifi": "NiFi"
       }
-    },
-    "aws": {
-      "analytics": {
-        "ElasticsearchService": "ES"
-      },
-      "business": {
-        "AlexaForBusiness": "A4B"
-      },
-      "blockchain": {
-        "QuantumLedgerDatabaseQldb": "QLDB"
-      },
-      "compute": {
-        "ApplicationAutoScaling": "AutoScaling",
-        "EC2Ami": "AMI",
-        "EC2ContainerRegistry": "ECR",
-        "ElasticBeanstalk": "EB",
-        "ElasticContainerService": "ECS",
-        "ElasticKubernetesService": "EKS",
-        "ServerlessApplicationRepository": "SAR"
-      },
-      "database": {
-        "DatabaseMigrationService": "DMS",
-        "DocumentdbMongodbCompatibility": "DocumentDB",
-        "DynamodbDax": "DAX",
-        "DynamodbGlobalSecondaryIndex": "DynamodbGSI",
-        "Database": "DB",
-        "Dynamodb": "DDB",
-        "Elasticache": "ElastiCache",
-        "QuantumLedgerDatabaseQldb": "QLDB"
-      },
-      "devtools": {
-        "CommandLineInterface": "CLI",
-        "DeveloperTools": "DevTools"
-      },
-      "engagement": {
-        "SimpleEmailServiceSes": "SES"
-      },
-      "general": {
-        "GenericOfficeBuilding": "OfficeBuilding"
-      },
-      "integration": {
-        "SimpleNotificationServiceSns": "SNS",
-        "SimpleQueueServiceSqs": "SQS",
-        "StepFunctions": "SF"
-      },
-      "iot": {
-        "Freertos": "FreeRTOS",
-        "IotHardwareBoard": "IotBoard"
-      },
-      "management": {
-        "SystemsManager": "SSM",
-        "SystemsManagerParameterStore": "ParameterStore"
-      },
-      "migration": {
-        "ApplicationDiscoveryService": "ADS",
-        "CloudendureMigration": "CEM",
-        "DatabaseMigrationService": "DMS",
-        "MigrationAndTransfer": "MAT",
-        "ServerMigrationService": "SMS"
-      },
-      "ml": {
-        "DeepLearningContainers": "DLC"
-      },
-      "network": {
-        "CloudFront": "CF",
-        "ElasticLoadBalancing": "ELB",
-        "ElbApplicationLoadBalancer": "ALB",
-        "ElbClassicLoadBalancer": "CLB",
-        "ElbNetworkLoadBalancer": "NLB",
-        "GlobalAccelerator": "GAX"
-      },
-      "security": {
-        "CertificateManager": "ACM",
-        "Cloudhsm": "CloudHSM",
-        "DirectoryService": "DS",
-        "FirewallManager": "FMS",
-        "IdentityAndAccessManagementIamAccessAnalyzer": "IAMAccessAnalyzer",
-        "IdentityAndAccessManagementIamAWSSts": "IAMAWSSts",
-        "IdentityAndAccessManagementIamPermissions": "IAMPermissions",
-        "IdentityAndAccessManagementIamRole": "IAMRole",
-        "IdentityAndAccessManagementIam": "IAM",
-        "KeyManagementService": "KMS",
-        "ResourceAccessManager": "RAM"
-      },
-      "storage": {
-        "CloudendureDisasterRecovery": "CDR",
-        "ElasticBlockStoreEBS": "EBS",
-        "ElasticFileSystemEFS": "EFS",
-        "Fsx": "FSx",
-        "SimpleStorageServiceS3": "S3"
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
       }
-    },
-    "azure": {
-      "compute": {
-        "ContainerRegistries": "ACR",
-        "KubernetesServices": "AKS",
-        "VMScaleSet": "VMSS"
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 533 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
+    openstack: {
+      apiproxies: {
+        EC2API: "ec2api.png"
+      },
+      applicationlifecycle: {
+        Freezer: "freezer.png",
+        Masakari: "masakari.png",
+        Murano: "murano.png",
+        Solum: "solum.png"
+      },
+      baremetal: {
+        Cyborg: "cyborg.png",
+        Ironic: "ironic.png"
+      },
+      billing: {
+        Cloudkitty: "cloudkitty.png"
+      },
+      compute: {
+        Nova: "nova.png",
+        Qinling: "qinling.png",
+        Zun: "zun.png"
+      },
+      containerservices: {
+        Kuryr: "kuryr.png"
+      },
+      deployment: {
+        Ansible: "ansible.png",
+        Charms: "charms.png",
+        Chef: "chef.png",
+        Helm: "helm.png",
+        Kolla: "kolla.png",
+        Tripleo: "tripleo.png"
+      },
+      frontend: {
+        Horizon: "horizon.png"
+      },
+      monitoring: {
+        Monasca: "monasca.png",
+        Telemetry: "telemetry.png"
+      },
+      multiregion: {
+        Tricircle: "tricircle.png"
+      },
+      networking: {
+        Designate: "designate.png",
+        Neutron: "neutron.png",
+        Octavia: "octavia.png"
+      },
+      nfv: {
+        Tacker: "tacker.png"
+      },
+      optimization: {
+        Congress: "congress.png",
+        Rally: "rally.png",
+        Vitrage: "vitrage.png",
+        Watcher: "watcher.png"
+      },
+      orchestration: {
+        Blazar: "blazar.png",
+        Heat: "heat.png",
+        Mistral: "mistral.png",
+        Senlin: "senlin.png",
+        Zaqar: "zaqar.png"
+      },
+      packaging: {
+        LOCI: "loci.png",
+        Puppet: "puppet.png",
+        RPM: "rpm.png"
+      },
+      sharedservices: {
+        Barbican: "barbican.png",
+        Glance: "glance.png",
+        Karbor: "karbor.png",
+        Keystone: "keystone.png",
+        Searchlight: "searchlight.png"
+      },
+      storage: {
+        Cinder: "cinder.png",
+        Manila: "manila.png",
+        Swift: "swift.png"
+      },
+      user: {
+        Openstackclient: "openstackclient.png"
+      },
+      workloadprovisioning: {
+        Magnum: "magnum.png",
+        Sahara: "sahara.png",
+        Trove: "trove.png"
       }
-    },
-    "gcp": {
-      "analytics": {
-        "Bigquery": "BigQuery",
-        "Pubsub": "PubSub"
-      },
-      "compute": {
-        "AppEngine": "GAE",
-        "Functions": "GCF",
-        "ComputeEngine": "GCE",
-        "KubernetesEngine": "GKE"
-      },
-      "database": {
-        "Bigtable": "BigTable"
-      },
-      "devtools": {
-        "ContainerRegistry": "GCR"
-      },
-      "ml": {
-        "Automl": "AutoML",
-        "NaturalLanguageAPI": "NLAPI",
-        "SpeechToText": "STT",
-        "TextToSpeech": "TTS"
-      },
-      "network": {
-        "VirtualPrivateCloud": "VPC"
-      },
-      "security": {
-        "KeyManagementService": "KMS",
-        "SecurityCommandCenter": "SCC"
-      },
-      "storage": {
-        "Storage": "GCS"
-      }
-    },
-    "firebase": {
-      "grow": {
-        "Messaging": "FCM"
-      }
-    },
-    "k8s": {
-      "clusterconfig": {
-        "Limits": "LimitRange",
-        "HPA": "HorizontalPodAutoscaler"
-      },
-      "compute": {
-        "Deploy": "Deployment",
-        "DS": "DaemonSet",
-        "RS": "ReplicaSet",
-        "STS": "StatefulSet"
-      },
-      "controlplane": {
-        "API": "APIServer",
-        "CM": "ControllerManager",
-        "KProxy": "KubeProxy",
-        "Sched": "Scheduler"
-      },
-      "group": {
-        "NS": "Namespace"
-      },
-      "network": {
-        "Ep": "Endpoint",
-        "Ing": "Ingress",
-        "Netpol": "NetworkPolicy",
-        "SVC": "Service"
-      },
-      "podconfig": {
-        "CM": "ConfigMap"
-      },
-      "rbac": {
-        "CRole": "ClusterRole",
-        "CRB": "ClusterRoleBinding",
-        "RB": "RoleBinding",
-        "SA": "ServiceAccount"
-      },
-      "storage": {
-        "PV": "PersistentVolume",
-        "PVC": "PersistentVolumeClaim",
-        "SC": "StorageClass",
-        "Vol": "Volume"
-      }
-    },
-    "alibabacloud": {
-      "application": {
-        "LogService": "SLS",
-        "MessageNotificationService": "MNS",
-        "PerformanceTestingService": "PTS",
-        "SmartConversationAnalysis": "SCA"
-      },
-      "compute": {
-        "AutoScaling": "ESS",
-        "ElasticComputeService": "ECS",
-        "ElasticContainerInstance": "ECI",
-        "ElasticHighPerformanceComputing": "EHPC",
-        "FunctionCompute": "FC",
-        "OperationOrchestrationService": "OOS",
-        "ResourceOrchestrationService": "ROS",
-        "ServerLoadBalancer": "SLB",
-        "ServerlessAppEngine": "SAE",
-        "SimpleApplicationServer": "SAS",
-        "WebAppService": "WAS"
-      },
-      "database": {
-        "DataManagementService": "DMS",
-        "DataTransmissionService": "DTS",
-        "DatabaseBackupService": "DBS",
-        "DisributeRelationalDatabaseService": "DRDS",
-        "GraphDatabaseService": "GDS",
-        "RelationalDatabaseService": "RDS"
-      },
-      "network": {
-        "CloudEnterpriseNetwork": "CEN",
-        "ElasticIpAddress": "EIP",
-        "ServerLoadBalancer": "SLB",
-        "VirtualPrivateCloud": "VPC"
-      },
-      "security": {
-        "AntiBotService": "ABS",
-        "AntifraudService": "AS",
-        "CloudFirewall": "CFW",
-        "ContentModeration": "CM",
-        "DataEncryptionService": "DES",
-        "WebApplicationFirewall": "WAF"
-      },
-      "storage": {
-        "FileStorageHdfs": "HDFS",
-        "FileStorageNas": "NAS",
-        "HybridBackupRecovery": "HBR",
-        "HybridCloudDisasterRecovery": "HDR",
-        "ObjectStorageService": "OSS",
-        "ObjectTableStore": "OTS"
-      }
-    },
-    "oci": {
-      "compute": {
-        "VM": "VirtualMachine",
-        "VMWhite": "VirtualMachineWhite",
-        "BM": "BareMetal",
-        "BMWhite": "BareMetalWhite",
-        "OCIR": "OCIRegistry",
-        "OCIRWhite": "OCIRegistryWhite",
-        "OKE": "ContainerEngine",
-        "OKEWhite": "ContainerEngineWhite"
-      },
-      "database": {
-        "Autonomous": "ADB",
-        "AutonomousWhite": "ADBWhite",
-        "DatabaseService": "DBService",
-        "DatabaseServiceWhite": "DBServiceWhite"
-      }
-    },
-    "programming": {
-      "framework": {
-        "Fastapi": "FastAPI"
-      },
-      "language": {
-        "Javascript": "JavaScript",
-        "Nodejs": "NodeJS",
-        "Php": "PHP",
-        "Typescript": "TypeScript"
-      }
-    },
-    "saas": {
-      "logging": {
-        "Datadog": "DataDog",
-        "Newrelic": "NewRelic"
-      }
-    },
-    "elastic": {
-      "elasticsearch": {
-        "Logstash": "LogStash"
-      }
-    },
-    "outscale": {
-      "Osc": "OSC"
-    },
-    "generic": {},
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
     "openstack": {
       "user": {
         "Openstackclient": "OpenStackClient"
@@ -39869,29 +40241,339 @@ function getDiagramResources() {
         "Kolla": "KollaAnsible",
         "Tripleo": "TripleO"
       }
-    },
-    "ibm": {
-      "network": {
-        "ACL": "Rules",
-        "CIS": "InternetServices",
-        "DL": "DirectLink",
-        "FIP": "FloatingIp",
-        "FloatingIP": "FloatingIp",
-        "FW": "Firewall",
-        "LB": "LoadBalancer",
-        "NLB": "LoadBalancer",
-        "PublicGateway": "Gateway",
-        "SecurityGroupRules": "Rules",
-        "TG": "TransitGateway",
-        "VPC": "Vpc",
-        "VPNGateway": "VpnGateway",
-        "VPNConnection": "VpnConnection",
-        "VPNPolicy": "VpnPolicy"
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 534 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
+    outscale: {
+      compute: {
+        Compute: "compute.png",
+        DirectConnect: "direct-connect.png"
+      },
+      network: {
+        ClientVpn: "client-vpn.png",
+        InternetService: "internet-service.png",
+        LoadBalancer: "load-balancer.png",
+        NatService: "nat-service.png",
+        Net: "net.png",
+        SiteToSiteVpng: "site-to-site-vpng.png"
+      },
+      security: {
+        Firewall: "firewall.png",
+        IdentityAndAccessManagement: "identity-and-access-management.png"
+      },
+      storage: {
+        SimpleStorageService: "simple-storage-service.png",
+        Storage: "storage.png"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "outscale": {
+      "Osc": "OSC"
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 535 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
+    programming: {
+      flowchart: {
+        Action: "action.png",
+        Collate: "collate.png",
+        Database: "database.png",
+        Decision: "decision.png",
+        Delay: "delay.png",
+        Display: "display.png",
+        Document: "document.png",
+        InputOutput: "input-output.png",
+        Inspection: "inspection.png",
+        InternalStorage: "internal-storage.png",
+        LoopLimit: "loop-limit.png",
+        ManualInput: "manual-input.png",
+        ManualLoop: "manual-loop.png",
+        Merge: "merge.png",
+        MultipleDocuments: "multiple-documents.png",
+        OffPageConnectorLeft: "off-page-connector-left.png",
+        OffPageConnectorRight: "off-page-connector-right.png",
+        Or: "or.png",
+        PredefinedProcess: "predefined-process.png",
+        Preparation: "preparation.png",
+        Sort: "sort.png",
+        StartEnd: "start-end.png",
+        StoredData: "stored-data.png",
+        SummingJunction: "summing-junction.png"
+      },
+      framework: {
+        Angular: "angular.png",
+        Backbone: "backbone.png",
+        Django: "django.png",
+        Ember: "ember.png",
+        Fastapi: "fastapi.png",
+        Flask: "flask.png",
+        Flutter: "flutter.png",
+        Laravel: "laravel.png",
+        Micronaut: "micronaut.png",
+        Rails: "rails.png",
+        React: "react.png",
+        Spring: "spring.png",
+        Vue: "vue.png"
+      },
+      language: {
+        Bash: "bash.png",
+        C: "c.png",
+        Cpp: "cpp.png",
+        Csharp: "csharp.png",
+        Dart: "dart.png",
+        Elixir: "elixir.png",
+        Erlang: "erlang.png",
+        Go: "go.png",
+        Java: "java.png",
+        Javascript: "javascript.png",
+        Kotlin: "kotlin.png",
+        Matlab: "matlab.png",
+        Nodejs: "nodejs.png",
+        Php: "php.png",
+        Python: "python.png",
+        R: "r.png",
+        Ruby: "ruby.png",
+        Rust: "rust.png",
+        Scala: "scala.png",
+        Swift: "swift.png",
+        Typescript: "typescript.png"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "programming": {
+      "framework": {
+        "Fastapi": "FastAPI"
+      },
+      "language": {
+        "Javascript": "JavaScript",
+        "Nodejs": "NodeJS",
+        "Php": "PHP",
+        "Typescript": "TypeScript"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
 
-  var additional = {
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 536 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
+    saas: {
+      alerting: {
+        Newrelic: "newrelic.png",
+        Opsgenie: "opsgenie.png",
+        Pushover: "pushover.png"
+      },
+      analytics: {
+        Snowflake: "snowflake.png",
+        Stitch: "stitch.png"
+      },
+      cdn: {
+        Akamai: "akamai.png",
+        Cloudflare: "cloudflare.png"
+      },
+      chat: {
+        Discord: "discord.png",
+        Mattermost: "mattermost.png",
+        RocketChat: "rocket-chat.png",
+        Slack: "slack.png",
+        Teams: "teams.png",
+        Telegram: "telegram.png"
+      },
+      filesharing: {
+        Nextcloud: "nextcloud.png"
+      },
+      identity: {
+        Auth0: "auth0.png",
+        Okta: "okta.png"
+      },
+      logging: {
+        Datadog: "datadog.png",
+        Newrelic: "newrelic.png",
+        Papertrail: "papertrail.png"
+      },
+      media: {
+        Cloudinary: "cloudinary.png"
+      },
+      recommendation: {
+        Recombee: "recombee.png"
+      },
+      social: {
+        Facebook: "facebook.png",
+        Twitter: "twitter.png"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {
+    "saas": {
+      "logging": {
+        "Datadog": "DataDog",
+        "Newrelic": "NewRelic"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 537 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
     program: {
       // https://github.com/alrra/browser-logos/blob/main/src/README.md
       browser: {
@@ -40345,36 +41027,11 @@ function getDiagramResources() {
         SublimeText: "https://edent.github.io/SuperTinyIcons/images/svg/sublimetext.svg"
       }
     }
-  }; ///////////////////////////////////////////////////////////////////////////
-
-  function merge(src, node) {
-    for (var x in node) {
-      var aliase = node[x];
-
-      if (aliase) {
-        if (typeof aliase == "string") {
-          var obj = src[x];
-
-          if (obj) {
-            src[aliase] = obj;
-          }
-        } else {
-          if (src[x]) {
-            merge(src[x], node[x]);
-          } else {
-            src[x] = node[x];
-          }
-        }
-      }
-    }
-  }
-
-  merge(resources, ALIASES);
-  merge(resources, additional);
+  };
   return resources;
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getDiagramResources());
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
 
 /***/ })
 /******/ 	]);
@@ -40466,19 +41123,66 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var canvg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var d3_selection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(377);
+/* harmony import */ var d3_selection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(377);
 /* harmony import */ var d3_graphviz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(374);
 /* harmony import */ var d3_graphviz__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(d3_graphviz__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _sysgram_resources__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(522);
+/* harmony import */ var _resources_alibabacloud__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(522);
+/* harmony import */ var _resources_aws__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(523);
+/* harmony import */ var _resources_azure__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(524);
+/* harmony import */ var _resources_elastic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(525);
+/* harmony import */ var _resources_firebase__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(526);
+/* harmony import */ var _resources_gcp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(527);
+/* harmony import */ var _resources_generic__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(528);
+/* harmony import */ var _resources_ibm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(529);
+/* harmony import */ var _resources_k8s__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(530);
+/* harmony import */ var _resources_oci__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(531);
+/* harmony import */ var _resources_onprem__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(532);
+/* harmony import */ var _resources_openstack__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(533);
+/* harmony import */ var _resources_outscale__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(534);
+/* harmony import */ var _resources_programming__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(535);
+/* harmony import */ var _resources_saas__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(536);
+/* harmony import */ var _resources_additional__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(537);
 
 
 
 const _ = d3_graphviz__WEBPACK_IMPORTED_MODULE_1__.graphviz;
- // sysgram.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var diagramResources = { ..._resources_alibabacloud__WEBPACK_IMPORTED_MODULE_2__.default,
+  ..._resources_aws__WEBPACK_IMPORTED_MODULE_3__.default,
+  ..._resources_azure__WEBPACK_IMPORTED_MODULE_4__.default,
+  ..._resources_elastic__WEBPACK_IMPORTED_MODULE_5__.default,
+  ..._resources_firebase__WEBPACK_IMPORTED_MODULE_6__.default,
+  ..._resources_gcp__WEBPACK_IMPORTED_MODULE_7__.default,
+  ..._resources_generic__WEBPACK_IMPORTED_MODULE_8__.default,
+  ..._resources_ibm__WEBPACK_IMPORTED_MODULE_9__.default,
+  ..._resources_k8s__WEBPACK_IMPORTED_MODULE_10__.default,
+  ..._resources_oci__WEBPACK_IMPORTED_MODULE_11__.default,
+  ..._resources_onprem__WEBPACK_IMPORTED_MODULE_12__.default,
+  ..._resources_openstack__WEBPACK_IMPORTED_MODULE_13__.default,
+  ..._resources_outscale__WEBPACK_IMPORTED_MODULE_14__.default,
+  ..._resources_programming__WEBPACK_IMPORTED_MODULE_15__.default,
+  ..._resources_saas__WEBPACK_IMPORTED_MODULE_16__.default,
+  ..._resources_additional__WEBPACK_IMPORTED_MODULE_17__.default
+}; // sysgram.js
 // version : ${SYSDIAGRAM_VERSION}
 // authors : Jeong-Ho, Eun
 // license : MIT
-// https://succeun.github.io/sysgram
+// https://succeun.github.io/sysgram.js
 // Ansi Color for Console log
 
 var ansi = {
@@ -41516,7 +42220,7 @@ function createGraphviz(selectorOrElement, graphvizOptions) {
     throw new Error("The selector or element is null or emtpy.");
   }
 
-  var graphviz = d3_selection__WEBPACK_IMPORTED_MODULE_3__.default(selectorOrElement).graphviz(graphvizOptions);
+  var graphviz = d3_selection__WEBPACK_IMPORTED_MODULE_18__.default(selectorOrElement).graphviz(graphvizOptions);
   element.graphviz = graphviz; // Assigned sysgram reference
 
   graphviz.sysgram_ctx = cloneObject(ctx);
@@ -41655,8 +42359,8 @@ var diagrams = {}; // Preset namespace resources to be used in scripts
 
 function loadResources(resourceJson, baseUrl) {
   if (!isLoadedResources) {
-    resourceJson = resourceJson || _sysgram_resources__WEBPACK_IMPORTED_MODULE_2__.default;
-    baseUrl = baseUrl || _sysgram_resources__WEBPACK_IMPORTED_MODULE_2__.default.baseUrl;
+    resourceJson = resourceJson || diagramResources;
+    baseUrl = baseUrl || diagramResources.baseUrl;
     var baseUrl = baseUrl || "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources";
     baseUrl = baseUrl.endsWith("/") ? baseUrl.substring(0, baseUrl.length - 1) : baseUrl;
 
@@ -42015,7 +42719,7 @@ var sysgram = {
 
 function highlight(config) {
   return function (element, graphviz) {
-    var elt = d3_selection__WEBPACK_IMPORTED_MODULE_3__.default(element);
+    var elt = d3_selection__WEBPACK_IMPORTED_MODULE_18__.default(element);
     var nodes = elt.selectAll(".node");
     var edges = elt.selectAll(".edge");
     var clusters = elt.selectAll(".cluster");

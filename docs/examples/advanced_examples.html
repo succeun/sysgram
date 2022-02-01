@@ -170,404 +170,6 @@
 <body>
 	<h1>Sysgram.js Examples</h1>
 	
-	<h2>Grouped Workers on AWS</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-ctx.attributes.digraph.splines = 'curved'
-
-var EC2 = diagrams.aws.compute.EC2
-var RDS = diagrams.aws.database.RDS
-var ELB = diagrams.aws.network.ELB
-
-Diagram("Grouped Workers", function() {
-	ELB("lb")._$([EC2("worker1"), 
-				EC2("worker2"),
-				EC2("worker3"),
-				EC2("worker4"),
-				EC2("worker5")])._$(RDS("events"))
-}, {rankdir: "TB"})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	
-	<h2>Clustered Web Services</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-var ECS = diagrams.aws.compute.ECS
-var { ElastiCache, RDS } = diagrams.aws.database
-var ELB = diagrams.aws.network.ELB
-var Route53 = diagrams.aws.network.Route53
-
-Diagram("Clustered Web Services", function() {
-	ctx.dns = Route53("dns")
-    ctx.lb = ELB("lb")
-	
-	Cluster("Services", function() {
-		ctx.svc_group = [ECS("web1"),
-						ECS("web2"),
-						ECS("web3")]
-	})
-	
-	Cluster("DB Cluster", function() {
-		ctx.db_master = RDS("userdb")
-		ctx.db_master._([RDS("userdb ro")])
-	})
-	
-	ctx.memcached = ElastiCache("memcached")
-	
-	ctx.dns._$(ctx.lb)._$(ctx.svc_group)
-    ctx.svc_group._$(ctx.db_master)
-    ctx.svc_group._$(ctx.memcached)
-	
-})
-//ctx.onCompleted = function(element, graphviz) { graphviz.toImage('test') }
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	
-	<h2>Event Processing on AWS</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-var { ECS, EKS, Lambda } = diagrams.aws.compute
-var Redshift = diagrams.aws.database.Redshift
-var SQS = diagrams.aws.integration.SQS
-var S3 = diagrams.aws.storage.S3
-
-Diagram("Event Processing", function() {
-	ctx.source = EKS("k8s source")
-	Cluster("Event Flows", function() {
-		Cluster("Event Workers", function() {
-			ctx.workers = [ECS("worker1"),
-						   ECS("worker2"),
-						   ECS("worker3")]
-		})
-	
-		ctx.queue = SQS("event queue")
-	
-		Cluster("Event Flows", function() {
-			ctx.handlers = [Lambda("proc1"),
-							Lambda("proc2"),
-							Lambda("proc3")]
-		})
-	})
-	
-	ctx.store = S3("events store")
-    ctx.dw = Redshift("analytics")
-
-    ctx.source._$(ctx.workers)._$(ctx.queue)._$(ctx.handlers)
-    ctx.handlers._$(ctx.store)
-    ctx.handlers._$(ctx.dw)
-})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	
-	<h2>Message Collecting System on GCP</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-var { BigQuery, Dataflow, PubSub } = diagrams.gcp.analytics
-var {AppEngine, Functions } = diagrams.gcp.compute
-var BigTable = diagrams.gcp.database.BigTable
-var IotCore = diagrams.gcp.iot.IotCore
-var GCS = diagrams.gcp.storage.GCS
-
-Diagram("Message Collecting", () => {
-	ctx.pubsub = PubSub("pubsub")
-	
-	Cluster("Source of Data", () => {
-        /*
-		ctx.iots = [IotCore("core1"),
-					IotCore("core2"),
-					IotCore("core3")]
-		ctx.iots._$(ctx.pubsub)
-		*/
-		ArrayNode([IotCore("core1"),
-				IotCore("core2"),
-				IotCore("core3")])._$(ctx.pubsub)
-	})
-
-    Cluster("Targets", () => {
-        Cluster("Data Flow", () => {
-            ctx.flow = Dataflow("data flow")
-		})
-		
-        Cluster("Data Lake", () => {
-            ctx.flow._$([BigQuery("bq"),
-                     GCS("storage")])
-		})
-
-        Cluster("Event Driven", () => {
-            Cluster("Processing", () => {
-                ctx.flow._$(AppEngine("engine"))._$(BigTable("bigtable"))
-			})
-
-            Cluster("Serverless", () => {
-                ctx.flow._$(Functions("func"))._$(AppEngine("appengine"))
-			})
-		})
-	})
-    ctx.pubsub._$(ctx.flow)
-})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	
-	<h2>Exposed Pod with 3 Replicas on Kubernetes</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-var HPA = diagrams.k8s.clusterconfig.HPA
-var { Deployment, Pod, ReplicaSet }  = diagrams.k8s.compute
-var { Ingress, Service } = diagrams.k8s.network
-
-Diagram("Exposed Pod with 3 Replicas", () => {
-	ctx.net = Ingress("domain.com")._$(Service("svc"))
-    ctx.net._$([Pod("pod1"),
-            Pod("pod2"),
-            Pod("pod3")]).$_(ReplicaSet("rs")).$_(Deployment("dp")).$_(HPA("hpa"))
-})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	
-	<h2>Stateful Architecture on Kubernetes</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-var { Pod, StatefulSet } = diagrams.k8s.compute
-var Service = diagrams.k8s.network.Service
-var { PV, PVC, StorageClass } = diagrams.k8s.storage
-
-Diagram("Stateful Architecture", () => {
-	Cluster("Apps", () => {
-        ctx.svc = Service("svc")
-        ctx.sts = StatefulSet("sts")
-
-        ctx.apps = []
-        for (var i = 0; i < 3; i++) {
-            ctx.pod = Pod("pod")
-            ctx.pvc = PVC("pvc")
-            ctx.pod._(ctx.sts)._(ctx.pvc)
-            ctx.apps.push(ctx.svc._$(ctx.pod)._$(ctx.pvc))
-		}
-	})
-
-    ctx.apps.$_(PV("pv")).$_(StorageClass("sc"))
-})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	
-	<h2>Advanced Web Service with On-Premise</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-var Spark = diagrams.onprem.analytics.Spark
-var Server = diagrams.onprem.compute.Server
-var PostgreSQL = diagrams.onprem.database.Postgresql
-var Redis = diagrams.onprem.inmemory.Redis
-var Fluentd = diagrams.onprem.aggregator.Fluentd
-var { Grafana, Prometheus } = diagrams.onprem.monitoring
-var Nginx = diagrams.onprem.network.Nginx
-var Kafka = diagrams.onprem.queue.Kafka
-
-Diagram("Advanced Web Service with On-Premise", function() {
-	ctx.ingress = Nginx("ingress")
-	
-	ctx.metrics = Prometheus("metric")
-	ctx.metrics.$_(Grafana("monitoring"))
-
-	Cluster("Service Cluster", () => {
-		ctx.grpcsvc = [
-			Server("grpc1"), 
-			Server("grpc2"), 
-			Server("grpc3")]
-	})
-
-	Cluster("Sessions HA", () => {
-		ctx.master = Redis("session")
-		ctx.master._(Redis("replica")).$_(ctx.metrics)
-		ctx.grpcsvc._$(ctx.master)
-	})
-
-	Cluster("Database HA", () => {
-		ctx.master = PostgreSQL("users")
-		ctx.master._(PostgreSQL("slave")).$_(ctx.metrics)
-		ctx.grpcsvc._$(ctx.master)
-	})
-	
-	ctx.aggregator = Fluentd("logging")
-	ctx.aggregator._$(Kafka("stream"))._$(Spark("analytics"))
-
-	ctx.ingress._$(ctx.grpcsvc)._$(ctx.aggregator)
-})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	
-	<h2>Advanced Web Service with On-Premise (with colors and labels)</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-var Spark = diagrams.onprem.analytics.Spark
-var Server = diagrams.onprem.compute.Server
-var PostgreSQL = diagrams.onprem.database.Postgresql
-var Redis = diagrams.onprem.inmemory.Redis
-var Fluentd = diagrams.onprem.aggregator.Fluentd
-var { Grafana, Prometheus } = diagrams.onprem.monitoring
-var Nginx = diagrams.onprem.network.Nginx
-var Kafka = diagrams.onprem.queue.Kafka
-
-Diagram("Advanced Web Service with On-Premise (colored)", function() {
-	ctx.ingress = Nginx("ingress")
-	
-	ctx.metrics = Prometheus("metric")
-	ctx.metrics.$_(Edge({color: "firebrick", style: "dashed"})).$_(Grafana("monitoring"))
-
-	Cluster("Service Cluster", () => {
-		ctx.grpcsvc = [
-			Server("grpc1"), 
-			Server("grpc2"), 
-			Server("grpc3")]
-	})
-
-	Cluster("Sessions HA", () => {
-		ctx.master = Redis("session")
-		ctx.master._(Edge({color: "brown", style: "dashed"}))._(Redis("replica")).$_(Edge({label: "collect"})).$_(ctx.metrics)
-		ctx.grpcsvc._$(Edge({color: "brown"}))._$(ctx.master)
-	})
-
-	Cluster("Database HA", () => {
-		ctx.master = PostgreSQL("users")
-		ctx.master._(Edge({color: "brown", style: "dotted"}))._(PostgreSQL("slave")).$_(Edge({label: "collect"})).$_(ctx.metrics)
-		ctx.grpcsvc._$(Edge({color: "black"}))._$(ctx.master)
-	})
-	
-	ctx.aggregator = Fluentd("logging")
-	ctx.aggregator._$(Edge({label: "parse"}))._$(Kafka("stream"))._$(Edge({color: "black", style: "bold"}))._$(Spark("analytics"))
-
-	ctx.ingress.$_$(Edge({color: "darkgreen"})).$_$(ctx.grpcsvc)._$(Edge({color: "darkorange"}))._$(ctx.aggregator)
-})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	
-	<h2>RabbitMQ Consumers with Custom Nodes</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-var Aurora = diagrams.aws.database.Aurora
-var Pod = diagrams.k8s.compute.Pod
-
-var rabbitmq_icon = "https://jpadilla.github.io/rabbitmqapp/assets/img/icon.png"
-
-Diagram("Broker Consumers", function() {
-	Cluster("Consumers", function() {
-        ctx.consumers = [
-            Pod("worker"),
-            Pod("worker"),
-            Pod("worker")]
-	})
-
-    ctx.queue = Custom("Message queue", rabbitmq_icon)
-
-    ctx.queue.$_$(ctx.consumers).$_$(Aurora("Database"))
-})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	<h2>Circled Workers on AWS</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-ctx.attributes.graphviz.engine = 'circo'
-ctx.attributes.digraph.splines = 'curved'
-		
-var EC2 = diagrams.aws.compute.EC2
-var RDS = diagrams.aws.database.RDS
-var APIGateway = diagrams.aws.network.APIGateway
-
-Diagram("Grouped Workers", function() {
-	ctx.worker1 = EC2("worker1")
-    ctx.worker4 = EC2("worker4")
-  	ctx.worker6 = EC2("worker6")
-  
-    ctx.worker1.$_$(EC2("worker2")).$_$(EC2("worker3")).$_$(ctx.worker4).$_$(EC2("worker5")).$_$(ctx.worker6)
-  	ctx.worker6.$_$(ctx.worker1)
-	
-	ctx.gateway = APIGateway("gateway")
-    ctx.userdb = RDS("userdb")
-  	
-  	ctx.gateway._$(ctx.worker1)
-	ctx.worker4._$(ctx.userdb)
-})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
 	<h2>Company organization chart (with HTML-like labels)</h2>
 	<div class="group">
 		<div class="codeContainer">
@@ -630,68 +232,7 @@ Diagram("Organization", function() {
 		</div>
 	</div>
 	
-	<h2>Connection between Group Nodes and Group Nodes</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-ctx.attributes.digraph.splines = 'spline'
-		
-var { EC2 } = diagrams.aws.compute
-var { RDS } = diagrams.aws.database
-var { ELB } = diagrams.aws.network
-
-Diagram("Grouped Workers", () => {
-    ArrayNode([ELB("lb1"), ELB("lb2")])._$([EC2("worker1"),
-                  EC2("worker2"),
-                  EC2("worker3"),
-                  EC2("worker4"),
-                  EC2("worker5")])//._$([RDS("events1"), RDS("events2")])
-}, {rankdir: 'TB'})
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	<h2>Repeat Custom Nodes</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-ctx.attributes.digraph.splines = 'line'    // Changed graphviz digraph splines
-
-var WEB = (name, attrs) => Node(name, attrs, "../docs/images/web.png")
-var WAS = (name, attrs) => Node(name, attrs, "../docs/images/was.png")
-var DB = (name, attrs) => Node(name, attrs, "../docs/images/database.png")
-
-Diagram("Repeat Custom", () => {
-    Cluster("Web Servers", () => {
-        ctx.webs = [WEB("web #1"), WEB("web #2")]
-    })
-    
-    Cluster("WAS Servers", () => {
-        ctx.wass = [WAS("WAS #1"), WAS("WAS #2")]
-    })
-    
-    Cluster("DB Servers", () => {
-        ctx.dbs = [DB("DB #1"), DB("DB #2")]
-    })
-    
-  ctx.webs._$(ctx.wass)._$(ctx.dbs)
-  
-}, {rankdir: "LR" })
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	<h2>Build Cloud Native Applications</h2>
+	<h2>Build Cloud Native Applications (with Advanced Edge)</h2>
 	<div class="group">
 		<div class="codeContainer">
 			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
@@ -734,39 +275,7 @@ Diagram("Build cloud native applications", () => {
 	ctx.ASA.edge("⑩")._$(PowerBI("Power BI"))
 	ctx.CosDB.edge("⑨")._$(ctx.ASA)
   
-}, {rankdir: "LR", pad: "0.5", nodesep: "1", ranksep: "2", splines: "line" })
-			</code>
-		</div>
-		<div class="diagramContainer">
-			<button class="btn-default download badge">Image Download</button>
-			<div class="sysgram"></div>
-		</div>
-	</div>
-	
-	<h2>Cluster Connect</h2>
-	<div class="group">
-		<div class="codeContainer">
-			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
-			<code>
-ctx.attributes.verbose = true
-
-var APIGateway = diagrams.aws.network.APIGateway
-var Aurora = diagrams.aws.database.Aurora
-var Pod = diagrams.k8s.compute.Pod
-
-Diagram("Broker Consumers", function() {
-	Cluster("Consumers Wrapper", function() {
-		Cluster("Consumers", function() {
-			ctx.consumers = [
-				Pod("worker"),
-				Pod("worker"),
-				Pod("worker")]
-		})
-	})
-    ctx.gateway = APIGateway("Gateway")
-
-    ctx.gateway.e({lhead: true})._$(ctx.consumers).e({ltail: true})._$(Aurora("Database"))
-})
+}, {rankdir: "LR", pad: "0.5", nodesep: "1", ranksep: "2", splines: "curved" })
 			</code>
 		</div>
 		<div class="diagramContainer">
@@ -810,7 +319,7 @@ Diagram("Social Media", function() {
 		</div>
 	</div>
 	
-	<h2>AWS Case Study</h2>
+	<h2>AWS Case Study (Using DummyCluster)</h2>
 	<div class="group">
 		<div class="codeContainer">
 			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
@@ -1042,6 +551,99 @@ Diagram("Video On Demand (VOD) solution for E-Learning", function() {
   	ctx.IC.e({constraint: false}).$_$(ctx.AU)
   	ctx.PD.$_$(ctx.AU)
 	ctx.CF.$_(ctx.Users)
+})
+			</code>
+		</div>
+		<div class="diagramContainer">
+			<button class="btn-default download badge">Image Download</button>
+			<div class="sysgram"></div>
+		</div>
+	</div>
+	
+	<h2>Connection between Group Nodes and Group Nodes</h2>
+	<div class="group">
+		<div class="codeContainer">
+			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
+			<code>
+ctx.attributes.digraph.splines = 'spline'
+		
+var { EC2 } = diagrams.aws.compute
+var { RDS } = diagrams.aws.database
+var { ELB } = diagrams.aws.network
+
+Diagram("Grouped Workers", () => {
+    ArrayNode([ELB("lb1"), ELB("lb2")])._$([EC2("worker1"),
+                  EC2("worker2"),
+                  EC2("worker3"),
+                  EC2("worker4"),
+                  EC2("worker5")])//._$([RDS("events1"), RDS("events2")])
+}, {rankdir: 'TB'})
+			</code>
+		</div>
+		<div class="diagramContainer">
+			<button class="btn-default download badge">Image Download</button>
+			<div class="sysgram"></div>
+		</div>
+	</div>
+	
+	<h2>Repeat Custom Nodes</h2>
+	<div class="group">
+		<div class="codeContainer">
+			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
+			<code>
+ctx.attributes.digraph.splines = 'line'    // Changed graphviz digraph splines
+
+var WEB = (name, attrs) => Node(name, attrs, "../docs/images/web.png")
+var WAS = (name, attrs) => Node(name, attrs, "../docs/images/was.png")
+var DB = (name, attrs) => Node(name, attrs, "../docs/images/database.png")
+
+Diagram("Repeat Custom", () => {
+    Cluster("Web Servers", () => {
+        ctx.webs = [WEB("web #1"), WEB("web #2")]
+    })
+    
+    Cluster("WAS Servers", () => {
+        ctx.wass = [WAS("WAS #1"), WAS("WAS #2")]
+    })
+    
+    Cluster("DB Servers", () => {
+        ctx.dbs = [DB("DB #1"), DB("DB #2")]
+    })
+    
+  ctx.webs._$(ctx.wass)._$(ctx.dbs)
+  
+}, {rankdir: "LR" })
+			</code>
+		</div>
+		<div class="diagramContainer">
+			<button class="btn-default download badge">Image Download</button>
+			<div class="sysgram"></div>
+		</div>
+	</div>
+	
+	<h2>Cluster Connect</h2>
+	<div class="group">
+		<div class="codeContainer">
+			<button class="btn-default run badge">Run(Ctrl-Enter)</button>
+			<code>
+ctx.attributes.verbose = true
+
+var APIGateway = diagrams.aws.network.APIGateway
+var Aurora = diagrams.aws.database.Aurora
+var Pod = diagrams.k8s.compute.Pod
+
+Diagram("Broker Consumers", function() {
+	Cluster("Consumers Wrapper", function() {
+		Cluster("Consumers", function() {
+			ctx.consumers = [
+				Pod("worker"),
+				Pod("worker"),
+				Pod("worker")]
+		})
+	})
+    ctx.gateway = APIGateway("Gateway")
+
+    ctx.gateway.e({lhead: true})._$(ctx.consumers).e({ltail: true})._$(Aurora("Database"))
 })
 			</code>
 		</div>
