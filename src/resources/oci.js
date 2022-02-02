@@ -168,22 +168,22 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"oci": {
-			"compute": {
-				"VM": "VirtualMachine",
-				"VMWhite": "VirtualMachineWhite",
-				"BM": "BareMetal",
-				"BMWhite": "BareMetalWhite",
-				"OCIR": "OCIRegistry",
-				"OCIRWhite": "OCIRegistryWhite",
-				"OKE": "ContainerEngine",
-				"OKEWhite": "ContainerEngineWhite",
+		oci: {
+			compute: {
+				VM: "VirtualMachine",
+				VMWhite: "VirtualMachineWhite",
+				BM: "BareMetal",
+				BMWhite: "BareMetalWhite",
+				OCIR: "OCIRegistry",
+				OCIRWhite: "OCIRegistryWhite",
+				OKE: "ContainerEngine",
+				OKEWhite: "ContainerEngineWhite",
 			},
-			"database": {
-				"Autonomous": "ADB",
-				"AutonomousWhite": "ADBWhite",
-				"DatabaseService": "DBService",
-				"DatabaseServiceWhite": "DBServiceWhite",
+			database: {
+				Autonomous: "ADB",
+				AutonomousWhite: "ADBWhite",
+				DatabaseService: "DBService",
+				DatabaseServiceWhite: "DBServiceWhite",
 			}
 		},
 	}

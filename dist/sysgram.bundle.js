@@ -37661,55 +37661,55 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "alibabacloud": {
-      "application": {
-        "LogService": "SLS",
-        "MessageNotificationService": "MNS",
-        "PerformanceTestingService": "PTS",
-        "SmartConversationAnalysis": "SCA"
+    alibabacloud: {
+      application: {
+        LogService: "SLS",
+        MessageNotificationService: "MNS",
+        PerformanceTestingService: "PTS",
+        SmartConversationAnalysis: "SCA"
       },
-      "compute": {
-        "AutoScaling": "ESS",
-        "ElasticComputeService": "ECS",
-        "ElasticContainerInstance": "ECI",
-        "ElasticHighPerformanceComputing": "EHPC",
-        "FunctionCompute": "FC",
-        "OperationOrchestrationService": "OOS",
-        "ResourceOrchestrationService": "ROS",
-        "ServerLoadBalancer": "SLB",
-        "ServerlessAppEngine": "SAE",
-        "SimpleApplicationServer": "SAS",
-        "WebAppService": "WAS"
+      compute: {
+        AutoScaling: "ESS",
+        ElasticComputeService: "ECS",
+        ElasticContainerInstance: "ECI",
+        ElasticHighPerformanceComputing: "EHPC",
+        FunctionCompute: "FC",
+        OperationOrchestrationService: "OOS",
+        ResourceOrchestrationService: "ROS",
+        ServerLoadBalancer: "SLB",
+        ServerlessAppEngine: "SAE",
+        SimpleApplicationServer: "SAS",
+        WebAppService: "WAS"
       },
-      "database": {
-        "DataManagementService": "DMS",
-        "DataTransmissionService": "DTS",
-        "DatabaseBackupService": "DBS",
-        "DisributeRelationalDatabaseService": "DRDS",
-        "GraphDatabaseService": "GDS",
-        "RelationalDatabaseService": "RDS"
+      database: {
+        DataManagementService: "DMS",
+        DataTransmissionService: "DTS",
+        DatabaseBackupService: "DBS",
+        DisributeRelationalDatabaseService: "DRDS",
+        GraphDatabaseService: "GDS",
+        RelationalDatabaseService: "RDS"
       },
-      "network": {
-        "CloudEnterpriseNetwork": "CEN",
-        "ElasticIpAddress": "EIP",
-        "ServerLoadBalancer": "SLB",
-        "VirtualPrivateCloud": "VPC"
+      network: {
+        CloudEnterpriseNetwork: "CEN",
+        ElasticIpAddress: "EIP",
+        ServerLoadBalancer: "SLB",
+        VirtualPrivateCloud: "VPC"
       },
-      "security": {
-        "AntiBotService": "ABS",
-        "AntifraudService": "AS",
-        "CloudFirewall": "CFW",
-        "ContentModeration": "CM",
-        "DataEncryptionService": "DES",
-        "WebApplicationFirewall": "WAF"
+      security: {
+        AntiBotService: "ABS",
+        AntifraudService: "AS",
+        CloudFirewall: "CFW",
+        ContentModeration: "CM",
+        DataEncryptionService: "DES",
+        WebApplicationFirewall: "WAF"
       },
-      "storage": {
-        "FileStorageHdfs": "HDFS",
-        "FileStorageNas": "NAS",
-        "HybridBackupRecovery": "HBR",
-        "HybridCloudDisasterRecovery": "HDR",
-        "ObjectStorageService": "OSS",
-        "ObjectTableStore": "OTS"
+      storage: {
+        FileStorageHdfs: "HDFS",
+        FileStorageNas: "NAS",
+        HybridBackupRecovery: "HBR",
+        HybridCloudDisasterRecovery: "HDR",
+        ObjectStorageService: "OSS",
+        ObjectTableStore: "OTS"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -38287,95 +38287,95 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "aws": {
-      "analytics": {
-        "ElasticsearchService": "ES"
+    aws: {
+      analytics: {
+        ElasticsearchService: "ES"
       },
-      "business": {
-        "AlexaForBusiness": "A4B"
+      business: {
+        AlexaForBusiness: "A4B"
       },
-      "blockchain": {
-        "QuantumLedgerDatabaseQldb": "QLDB"
+      blockchain: {
+        QuantumLedgerDatabaseQldb: "QLDB"
       },
-      "compute": {
-        "ApplicationAutoScaling": "AutoScaling",
-        "EC2Ami": "AMI",
-        "EC2ContainerRegistry": "ECR",
-        "ElasticBeanstalk": "EB",
-        "ElasticContainerService": "ECS",
-        "ElasticKubernetesService": "EKS",
-        "ServerlessApplicationRepository": "SAR"
+      compute: {
+        ApplicationAutoScaling: "AutoScaling",
+        EC2Ami: "AMI",
+        EC2ContainerRegistry: "ECR",
+        ElasticBeanstalk: "EB",
+        ElasticContainerService: "ECS",
+        ElasticKubernetesService: "EKS",
+        ServerlessApplicationRepository: "SAR"
       },
-      "database": {
-        "DatabaseMigrationService": "DMS",
-        "DocumentdbMongodbCompatibility": "DocumentDB",
-        "DynamodbDax": "DAX",
-        "DynamodbGlobalSecondaryIndex": "DynamodbGSI",
-        "Database": "DB",
-        "Dynamodb": "DDB",
-        "Elasticache": "ElastiCache",
-        "QuantumLedgerDatabaseQldb": "QLDB"
+      database: {
+        DatabaseMigrationService: "DMS",
+        DocumentdbMongodbCompatibility: "DocumentDB",
+        DynamodbDax: "DAX",
+        DynamodbGlobalSecondaryIndex: "DynamodbGSI",
+        Database: "DB",
+        Dynamodb: "DDB",
+        Elasticache: "ElastiCache",
+        QuantumLedgerDatabaseQldb: "QLDB"
       },
-      "devtools": {
-        "CommandLineInterface": "CLI",
-        "DeveloperTools": "DevTools"
+      devtools: {
+        CommandLineInterface: "CLI",
+        DeveloperTools: "DevTools"
       },
-      "engagement": {
-        "SimpleEmailServiceSes": "SES"
+      engagement: {
+        SimpleEmailServiceSes: "SES"
       },
-      "general": {
-        "GenericOfficeBuilding": "OfficeBuilding"
+      general: {
+        GenericOfficeBuilding: "OfficeBuilding"
       },
-      "integration": {
-        "SimpleNotificationServiceSns": "SNS",
-        "SimpleQueueServiceSqs": "SQS",
-        "StepFunctions": "SF"
+      integration: {
+        SimpleNotificationServiceSns: "SNS",
+        SimpleQueueServiceSqs: "SQS",
+        StepFunctions: "SF"
       },
-      "iot": {
-        "Freertos": "FreeRTOS",
-        "IotHardwareBoard": "IotBoard"
+      iot: {
+        Freertos: "FreeRTOS",
+        IotHardwareBoard: "IotBoard"
       },
-      "management": {
-        "SystemsManager": "SSM",
-        "SystemsManagerParameterStore": "ParameterStore"
+      management: {
+        SystemsManager: "SSM",
+        SystemsManagerParameterStore: "ParameterStore"
       },
-      "migration": {
-        "ApplicationDiscoveryService": "ADS",
-        "CloudendureMigration": "CEM",
-        "DatabaseMigrationService": "DMS",
-        "MigrationAndTransfer": "MAT",
-        "ServerMigrationService": "SMS"
+      migration: {
+        ApplicationDiscoveryService: "ADS",
+        CloudendureMigration: "CEM",
+        DatabaseMigrationService: "DMS",
+        MigrationAndTransfer: "MAT",
+        ServerMigrationService: "SMS"
       },
-      "ml": {
-        "DeepLearningContainers": "DLC"
+      ml: {
+        DeepLearningContainers: "DLC"
       },
-      "network": {
-        "CloudFront": "CF",
-        "ElasticLoadBalancing": "ELB",
-        "ElbApplicationLoadBalancer": "ALB",
-        "ElbClassicLoadBalancer": "CLB",
-        "ElbNetworkLoadBalancer": "NLB",
-        "GlobalAccelerator": "GAX"
+      network: {
+        CloudFront: "CF",
+        ElasticLoadBalancing: "ELB",
+        ElbApplicationLoadBalancer: "ALB",
+        ElbClassicLoadBalancer: "CLB",
+        ElbNetworkLoadBalancer: "NLB",
+        GlobalAccelerator: "GAX"
       },
-      "security": {
-        "CertificateManager": "ACM",
-        "Cloudhsm": "CloudHSM",
-        "DirectoryService": "DS",
-        "FirewallManager": "FMS",
-        "IdentityAndAccessManagementIamAccessAnalyzer": "IAMAccessAnalyzer",
-        "IdentityAndAccessManagementIamAWSSts": "IAMAWSSts",
-        "IdentityAndAccessManagementIamPermissions": "IAMPermissions",
-        "IdentityAndAccessManagementIamRole": "IAMRole",
-        "IdentityAndAccessManagementIam": "IAM",
-        "KeyManagementService": "KMS",
-        "ResourceAccessManager": "RAM"
+      security: {
+        CertificateManager: "ACM",
+        Cloudhsm: "CloudHSM",
+        DirectoryService: "DS",
+        FirewallManager: "FMS",
+        IdentityAndAccessManagementIamAccessAnalyzer: "IAMAccessAnalyzer",
+        IdentityAndAccessManagementIamAWSSts: "IAMAWSSts",
+        IdentityAndAccessManagementIamPermissions: "IAMPermissions",
+        IdentityAndAccessManagementIamRole: "IAMRole",
+        IdentityAndAccessManagementIam: "IAM",
+        KeyManagementService: "KMS",
+        ResourceAccessManager: "RAM"
       },
-      "storage": {
-        "CloudendureDisasterRecovery": "CDR",
-        "ElasticBlockStoreEBS": "EBS",
-        "ElasticFileSystemEFS": "EFS",
-        "Fsx": "FSx",
-        "SimpleStorageServiceS3": "S3"
+      storage: {
+        CloudendureDisasterRecovery: "CDR",
+        ElasticBlockStoreEBS: "EBS",
+        ElasticFileSystemEFS: "EFS",
+        Fsx: "FSx",
+        SimpleStorageServiceS3: "S3"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -38649,11 +38649,11 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "azure": {
-      "compute": {
-        "ContainerRegistries": "ACR",
-        "KubernetesServices": "AKS",
-        "VMScaleSet": "VMSS"
+    azure: {
+      compute: {
+        ContainerRegistries: "ACR",
+        KubernetesServices: "AKS",
+        VMScaleSet: "VMSS"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -38742,9 +38742,9 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "elastic": {
-      "elasticsearch": {
-        "Logstash": "LogStash"
+    elastic: {
+      elasticsearch: {
+        Logstash: "LogStash"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -38827,9 +38827,9 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "firebase": {
-      "grow": {
-        "Messaging": "FCM"
+    firebase: {
+      grow: {
+        Messaging: "FCM"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -38995,38 +38995,38 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "gcp": {
-      "analytics": {
-        "Bigquery": "BigQuery",
-        "Pubsub": "PubSub"
+    gcp: {
+      analytics: {
+        Bigquery: "BigQuery",
+        Pubsub: "PubSub"
       },
-      "compute": {
-        "AppEngine": "GAE",
-        "Functions": "GCF",
-        "ComputeEngine": "GCE",
-        "KubernetesEngine": "GKE"
+      compute: {
+        AppEngine: "GAE",
+        Functions: "GCF",
+        ComputeEngine: "GCE",
+        KubernetesEngine: "GKE"
       },
-      "database": {
-        "Bigtable": "BigTable"
+      database: {
+        Bigtable: "BigTable"
       },
-      "devtools": {
-        "ContainerRegistry": "GCR"
+      devtools: {
+        ContainerRegistry: "GCR"
       },
-      "ml": {
-        "Automl": "AutoML",
-        "NaturalLanguageAPI": "NLAPI",
-        "SpeechToText": "STT",
-        "TextToSpeech": "TTS"
+      ml: {
+        Automl: "AutoML",
+        NaturalLanguageAPI: "NLAPI",
+        SpeechToText: "STT",
+        TextToSpeech: "TTS"
       },
-      "network": {
-        "VirtualPrivateCloud": "VPC"
+      network: {
+        VirtualPrivateCloud: "VPC"
       },
-      "security": {
-        "KeyManagementService": "KMS",
-        "SecurityCommandCenter": "SCC"
+      security: {
+        KeyManagementService: "KMS",
+        SecurityCommandCenter: "SCC"
       },
-      "storage": {
-        "Storage": "GCS"
+      storage: {
+        Storage: "GCS"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -39117,7 +39117,7 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "generic": {}
+    generic: {}
   }; ///////////////////////////////////////////////////////////////////////////
 
   function merge(src, node) {
@@ -39160,15 +39160,15 @@ __webpack_require__.r(__webpack_exports__);
 function getResources() {
   var resources = {
     baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
-    "ibm": {
-      "analytics": {
+    ibm: {
+      analytics: {
         Analytics: "analytics.png",
         DataIntegration: "data-integration.png",
         DataRepositories: "data-repositories.png",
         DeviceAnalytics: "device-analytics.png",
         StreamingComputing: "streaming-computing.png"
       },
-      "applications": {
+      applications: {
         ActionableInsight: "actionable-insight.png",
         Annotate: "annotate.png",
         ApiDeveloperPortal: "api-developer-portal.png",
@@ -39189,7 +39189,7 @@ function getResources() {
         VisualRecognition: "visual-recognition.png",
         Visualization: "visualization.png"
       },
-      "blockchain": {
+      blockchain: {
         BlockchainDeveloper: "blockchain-developer.png",
         Blockchain: "blockchain.png",
         CertificateAuthority: "certificate-authority.png",
@@ -39211,14 +39211,14 @@ function getResources() {
         TransactionManager: "transaction-manager.png",
         Wallet: "wallet.png"
       },
-      "compute": {
+      compute: {
         BareMetalServer: "bare-metal-server.png",
         ImageService: "image-service.png",
         Instance: "instance.png",
         Key: "key.png",
         PowerInstance: "power-instance.png"
       },
-      "data": {
+      data: {
         Caches: "caches.png",
         Cloud: "cloud.png",
         ConversationTrainedDeployed: "conversation-trained-deployed.png",
@@ -39233,7 +39233,7 @@ function getResources() {
         Model: "model.png",
         TmsDataInterface: "tms-data-interface.png"
       },
-      "devops": {
+      devops: {
         ArtifactManagement: "artifact-management.png",
         BuildTest: "build-test.png",
         CodeEditor: "code-editor.png",
@@ -39245,7 +39245,7 @@ function getResources() {
         Provision: "provision.png",
         ReleaseManagement: "release-management.png"
       },
-      "general": {
+      general: {
         CloudMessaging: "cloud-messaging.png",
         CloudServices: "cloud-services.png",
         Cloudant: "cloudant.png",
@@ -39274,7 +39274,7 @@ function getResources() {
         TextToSpeech: "text-to-speech.png",
         TransformationConnectivity: "transformation-connectivity.png"
       },
-      "infrastructure": {
+      infrastructure: {
         Channels: "channels.png",
         CloudMessaging: "cloud-messaging.png",
         Dashboard: "dashboard.png",
@@ -39294,7 +39294,7 @@ function getResources() {
         ServiceDiscoveryConfiguration: "service-discovery-configuration.png",
         TransformationConnectivity: "transformation-connectivity.png"
       },
-      "management": {
+      management: {
         AlertNotification: "alert-notification.png",
         ApiManagement: "api-management.png",
         CloudManagement: "cloud-management.png",
@@ -39311,7 +39311,7 @@ function getResources() {
         PushNotifications: "push-notifications.png",
         ServiceManagementTools: "service-management-tools.png"
       },
-      "network": {
+      network: {
         Bridge: "bridge.png",
         DirectLink: "direct-link.png",
         Enterprise: "rnterprise.png",
@@ -39334,7 +39334,7 @@ function getResources() {
         VpnGateway: "vpn-gateway.png",
         VpnPolicy: "vpn-policy.png"
       },
-      "security": {
+      security: {
         ApiSecurity: "api-security.png",
         BlockchainSecurityService: "blockchain-security-service.png",
         DataSecurity: "data-security.png",
@@ -39350,18 +39350,18 @@ function getResources() {
         TrustendComputing: "trustend-computing.png",
         Vpn: "vpn.png"
       },
-      "social": {
+      social: {
         Communities: "communities.png",
         FileSync: "file-sync.png",
         LiveCollaboration: "live-collaboration.png",
         Messaging: "messaging.png",
         Networking: "networking.png"
       },
-      "storage": {
+      storage: {
         BlockStorage: "block-storage.png",
         ObjectStorage: "object-storage.png"
       },
-      "user": {
+      user: {
         Browser: "browser.png",
         Device: "device.png",
         IntegratedDigitalExperiences: "integrated-digital-experiences.png",
@@ -39374,23 +39374,23 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "ibm": {
-      "network": {
-        "ACL": "Rules",
-        "CIS": "InternetServices",
-        "DL": "DirectLink",
-        "FIP": "FloatingIp",
-        "FloatingIP": "FloatingIp",
-        "FW": "Firewall",
-        "LB": "LoadBalancer",
-        "NLB": "LoadBalancer",
-        "PublicGateway": "Gateway",
-        "SecurityGroupRules": "Rules",
-        "TG": "TransitGateway",
-        "VPC": "Vpc",
-        "VPNGateway": "VpnGateway",
-        "VPNConnection": "VpnConnection",
-        "VPNPolicy": "VpnPolicy"
+    ibm: {
+      network: {
+        ACL: "Rules",
+        CIS: "InternetServices",
+        DL: "DirectLink",
+        FIP: "FloatingIp",
+        FloatingIP: "FloatingIp",
+        FW: "Firewall",
+        LB: "LoadBalancer",
+        NLB: "LoadBalancer",
+        PublicGateway: "Gateway",
+        SecurityGroupRules: "Rules",
+        TG: "TransitGateway",
+        VPC: "Vpc",
+        VPNGateway: "VpnGateway",
+        VPNConnection: "VpnConnection",
+        VPNPolicy: "VpnPolicy"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -39510,46 +39510,46 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "k8s": {
-      "clusterconfig": {
-        "Limits": "LimitRange",
-        "HPA": "HorizontalPodAutoscaler"
+    k8s: {
+      clusterconfig: {
+        Limits: "LimitRange",
+        HPA: "HorizontalPodAutoscaler"
       },
-      "compute": {
-        "Deploy": "Deployment",
-        "DS": "DaemonSet",
-        "RS": "ReplicaSet",
-        "STS": "StatefulSet"
+      compute: {
+        Deploy: "Deployment",
+        DS: "DaemonSet",
+        RS: "ReplicaSet",
+        STS: "StatefulSet"
       },
-      "controlplane": {
-        "API": "APIServer",
-        "CM": "ControllerManager",
-        "KProxy": "KubeProxy",
-        "Sched": "Scheduler"
+      controlplane: {
+        API: "APIServer",
+        CM: "ControllerManager",
+        KProxy: "KubeProxy",
+        Sched: "Scheduler"
       },
-      "group": {
-        "NS": "Namespace"
+      group: {
+        NS: "Namespace"
       },
-      "network": {
-        "Ep": "Endpoint",
-        "Ing": "Ingress",
-        "Netpol": "NetworkPolicy",
-        "SVC": "Service"
+      network: {
+        Ep: "Endpoint",
+        Ing: "Ingress",
+        Netpol: "NetworkPolicy",
+        SVC: "Service"
       },
-      "podconfig": {
-        "CM": "ConfigMap"
+      podconfig: {
+        CM: "ConfigMap"
       },
-      "rbac": {
-        "CRole": "ClusterRole",
-        "CRB": "ClusterRoleBinding",
-        "RB": "RoleBinding",
-        "SA": "ServiceAccount"
+      rbac: {
+        CRole: "ClusterRole",
+        CRB: "ClusterRoleBinding",
+        RB: "RoleBinding",
+        SA: "ServiceAccount"
       },
-      "storage": {
-        "PV": "PersistentVolume",
-        "PVC": "PersistentVolumeClaim",
-        "SC": "StorageClass",
-        "Vol": "Volume"
+      storage: {
+        PV: "PersistentVolume",
+        PVC: "PersistentVolumeClaim",
+        SC: "StorageClass",
+        Vol: "Volume"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -39758,22 +39758,22 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "oci": {
-      "compute": {
-        "VM": "VirtualMachine",
-        "VMWhite": "VirtualMachineWhite",
-        "BM": "BareMetal",
-        "BMWhite": "BareMetalWhite",
-        "OCIR": "OCIRegistry",
-        "OCIRWhite": "OCIRegistryWhite",
-        "OKE": "ContainerEngine",
-        "OKEWhite": "ContainerEngineWhite"
+    oci: {
+      compute: {
+        VM: "VirtualMachine",
+        VMWhite: "VirtualMachineWhite",
+        BM: "BareMetal",
+        BMWhite: "BareMetalWhite",
+        OCIR: "OCIRegistry",
+        OCIRWhite: "OCIRegistryWhite",
+        OKE: "ContainerEngine",
+        OKEWhite: "ContainerEngineWhite"
       },
-      "database": {
-        "Autonomous": "ADB",
-        "AutonomousWhite": "ADBWhite",
-        "DatabaseService": "DBService",
-        "DatabaseServiceWhite": "DBServiceWhite"
+      database: {
+        Autonomous: "ADB",
+        AutonomousWhite: "ADBWhite",
+        DatabaseService: "DBService",
+        DatabaseServiceWhite: "DBServiceWhite"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -40036,66 +40036,66 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "onprem": {
-      "analytics": {
-        "Powerbi": "PowerBI"
+    onprem: {
+      analytics: {
+        Powerbi: "PowerBI"
       },
-      "ci": {
-        "Circleci": "CircleCI",
-        "Concourseci": "ConcourseCI",
-        "Droneci": "DroneCI",
-        "Gitlabci": "GitlabCI",
-        "Travisci": "TravisCI",
-        "Teamcity": "TC",
-        "Zuulci": "ZuulCI"
+      ci: {
+        Circleci: "CircleCI",
+        Concourseci: "ConcourseCI",
+        Droneci: "DroneCI",
+        Gitlabci: "GitlabCI",
+        Travisci: "TravisCI",
+        Teamcity: "TC",
+        Zuulci: "ZuulCI"
       },
-      "container": {
-        "Lxc": "LXC",
-        "Rkt": "RKT"
+      container: {
+        Lxc: "LXC",
+        Rkt: "RKT"
       },
-      "database": {
-        "Clickhouse": "ClickHouse",
-        "Cockroachdb": "CockroachDB",
-        "Couchdb": "CouchDB",
-        "Hbase": "HBase",
-        "Influxdb": "InfluxDB",
-        "Janusgraph": "JanusGraph",
-        "Mariadb": "MariaDB",
-        "Mongodb": "MongoDB",
-        "Mssql": "MSSQL",
-        "Mysql": "MySQL",
-        "Postgresql": "PostgreSQL"
+      database: {
+        Clickhouse: "ClickHouse",
+        Cockroachdb: "CockroachDB",
+        Couchdb: "CouchDB",
+        Hbase: "HBase",
+        Influxdb: "InfluxDB",
+        Janusgraph: "JanusGraph",
+        Mariadb: "MariaDB",
+        Mongodb: "MongoDB",
+        Mssql: "MSSQL",
+        Mysql: "MySQL",
+        Postgresql: "PostgreSQL"
       },
-      "gitops": {
-        "Argocd": "ArgoCD"
+      gitops: {
+        Argocd: "ArgoCD"
       },
-      "logging": {
-        "Fluentbit": "FluentBit",
-        "Rsyslog": "RSyslog"
+      logging: {
+        Fluentbit: "FluentBit",
+        Rsyslog: "RSyslog"
       },
-      "network": {
-        "Etcd": "ETCD",
-        "Haproxy": "HAProxy",
-        "OpenServiceMesh": "OSM",
-        "Opnsense": "OPNSense",
-        "Pfsense": "PFSense",
-        "Vyos": "VyOS"
+      network: {
+        Etcd: "ETCD",
+        Haproxy: "HAProxy",
+        OpenServiceMesh: "OSM",
+        Opnsense: "OPNSense",
+        Pfsense: "PFSense",
+        Vyos: "VyOS"
       },
-      "proxmox": {
-        "Pve": "ProxmoxVE"
+      proxmox: {
+        Pve: "ProxmoxVE"
       },
-      "queue": {
-        "Activemq": "ActiveMQ",
-        "Rabbitmq": "RabbitMQ",
-        "Zeromq": "ZeroMQ"
+      queue: {
+        Activemq: "ActiveMQ",
+        Rabbitmq: "RabbitMQ",
+        Zeromq: "ZeroMQ"
       },
-      "storage": {
-        "Ceph": "CEPH",
-        "CephOsd": "CEPH_OSD"
+      storage: {
+        Ceph: "CEPH",
+        CephOsd: "CEPH_OSD"
       },
-      "workflow": {
-        "Kubeflow": "KubeFlow",
-        "Nifi": "NiFi"
+      workflow: {
+        Kubeflow: "KubeFlow",
+        Nifi: "NiFi"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -40234,16 +40234,16 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "openstack": {
-      "user": {
-        "Openstackclient": "OpenStackClient"
+    openstack: {
+      user: {
+        Openstackclient: "OpenStackClient"
       },
-      "billing": {
-        "Cloudkitty": "CloudKitty"
+      billing: {
+        Cloudkitty: "CloudKitty"
       },
-      "deployment": {
-        "Kolla": "KollaAnsible",
-        "Tripleo": "TripleO"
+      deployment: {
+        Kolla: "KollaAnsible",
+        Tripleo: "TripleO"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -40314,8 +40314,8 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "outscale": {
-      "Osc": "OSC"
+    outscale: {
+      Osc: "OSC"
     }
   }; ///////////////////////////////////////////////////////////////////////////
 
@@ -40432,15 +40432,15 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "programming": {
-      "framework": {
-        "Fastapi": "FastAPI"
+    programming: {
+      framework: {
+        Fastapi: "FastAPI"
       },
-      "language": {
-        "Javascript": "JavaScript",
-        "Nodejs": "NodeJS",
-        "Php": "PHP",
-        "Typescript": "TypeScript"
+      language: {
+        Javascript: "JavaScript",
+        Nodejs: "NodeJS",
+        Php: "PHP",
+        Typescript: "TypeScript"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////
@@ -40534,10 +40534,10 @@ function getResources() {
   // https://github.com/mingrammer/diagrams/blob/master/config.py
 
   var ALIASES = {
-    "saas": {
-      "logging": {
-        "Datadog": "DataDog",
-        "Newrelic": "NewRelic"
+    saas: {
+      logging: {
+        Datadog: "DataDog",
+        Newrelic: "NewRelic"
       }
     }
   }; ///////////////////////////////////////////////////////////////////////////

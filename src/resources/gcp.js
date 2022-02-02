@@ -125,38 +125,38 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"gcp": {
-			"analytics": {
-				"Bigquery": "BigQuery",
-				"Pubsub": "PubSub",
+		gcp: {
+			analytics: {
+				Bigquery: "BigQuery",
+				Pubsub: "PubSub",
 			},
-			"compute": {
-				"AppEngine": "GAE",
-				"Functions": "GCF",
-				"ComputeEngine": "GCE",
-				"KubernetesEngine": "GKE",
+			compute: {
+				AppEngine: "GAE",
+				Functions: "GCF",
+				ComputeEngine: "GCE",
+				KubernetesEngine: "GKE",
 			},
-			"database": {
-				"Bigtable": "BigTable",
+			database: {
+				Bigtable: "BigTable",
 			},
-			"devtools": {
-				"ContainerRegistry": "GCR",
+			devtools: {
+				ContainerRegistry: "GCR",
 			},
-			"ml": {
-				"Automl": "AutoML",
-				"NaturalLanguageAPI": "NLAPI",
-				"SpeechToText": "STT",
-				"TextToSpeech": "TTS",
+			ml: {
+				Automl: "AutoML",
+				NaturalLanguageAPI: "NLAPI",
+				SpeechToText: "STT",
+				TextToSpeech: "TTS",
 			},
-			"network": {
-				"VirtualPrivateCloud": "VPC"
+			network: {
+				VirtualPrivateCloud: "VPC"
 			},
-			"security": {
-				"KeyManagementService": "KMS",
-				"SecurityCommandCenter": "SCC",
+			security: {
+				KeyManagementService: "KMS",
+				SecurityCommandCenter: "SCC",
 			},
-			"storage": {
-				"Storage": "GCS",
+			storage: {
+				Storage: "GCS",
 			},
 		},
 	}

@@ -53,10 +53,10 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"saas": {
-			"logging": {
-				"Datadog": "DataDog",
-				"Newrelic": "NewRelic"
+		saas: {
+			logging: {
+				Datadog: "DataDog",
+				Newrelic: "NewRelic"
 			}
 		},
 	}

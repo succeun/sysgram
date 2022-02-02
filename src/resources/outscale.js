@@ -30,8 +30,8 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"outscale": {
-			"Osc": "OSC",
+		outscale: {
+			Osc: "OSC",
 		},
 	}
 	

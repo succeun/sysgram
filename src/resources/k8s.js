@@ -79,46 +79,46 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"k8s": {
-			"clusterconfig": {
-				"Limits": "LimitRange",
-				"HPA": "HorizontalPodAutoscaler",
+		k8s: {
+			clusterconfig: {
+				Limits: "LimitRange",
+				HPA: "HorizontalPodAutoscaler",
 			},
-			"compute": {
-				"Deploy": "Deployment",
-				"DS": "DaemonSet",
-				"RS": "ReplicaSet",
-				"STS": "StatefulSet"
+			compute: {
+				Deploy: "Deployment",
+				DS: "DaemonSet",
+				RS: "ReplicaSet",
+				STS: "StatefulSet"
 			},
-			"controlplane": {
-				"API": "APIServer",
-				"CM": "ControllerManager",
-				"KProxy": "KubeProxy",
-				"Sched": "Scheduler",
+			controlplane: {
+				API: "APIServer",
+				CM: "ControllerManager",
+				KProxy: "KubeProxy",
+				Sched: "Scheduler",
 			},
-			"group": {
-				"NS": "Namespace",
+			group: {
+				NS: "Namespace",
 			},
-			"network": {
-				"Ep": "Endpoint",
-				"Ing": "Ingress",
-				"Netpol": "NetworkPolicy",
-				"SVC": "Service",
+			network: {
+				Ep: "Endpoint",
+				Ing: "Ingress",
+				Netpol: "NetworkPolicy",
+				SVC: "Service",
 			},
-			"podconfig": {
-				"CM": "ConfigMap",
+			podconfig: {
+				CM: "ConfigMap",
 			},
-			"rbac": {
-				"CRole": "ClusterRole",
-				"CRB": "ClusterRoleBinding",
-				"RB": "RoleBinding",
-				"SA": "ServiceAccount",
+			rbac: {
+				CRole: "ClusterRole",
+				CRB: "ClusterRoleBinding",
+				RB: "RoleBinding",
+				SA: "ServiceAccount",
 			},
-			"storage": {
-				"PV": "PersistentVolume",
-				"PVC": "PersistentVolumeClaim",
-				"SC": "StorageClass",
-				"Vol": "Volume",
+			storage: {
+				PV: "PersistentVolume",
+				PVC: "PersistentVolumeClaim",
+				SC: "StorageClass",
+				Vol: "Volume",
 			},
 		},
 	}

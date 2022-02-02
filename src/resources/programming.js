@@ -77,15 +77,15 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"programming": {
-			"framework": {
-				"Fastapi": "FastAPI"
+		programming: {
+			framework: {
+				Fastapi: "FastAPI"
 			},
-			"language": {
-				"Javascript": "JavaScript",
-				"Nodejs": "NodeJS",
-				"Php": "PHP",
-				"Typescript": "TypeScript"
+			language: {
+				Javascript: "JavaScript",
+				Nodejs: "NodeJS",
+				Php: "PHP",
+				Typescript: "TypeScript"
 			},
 		},
 	}

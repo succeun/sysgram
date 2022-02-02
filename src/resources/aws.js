@@ -537,95 +537,95 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"aws": {
-			"analytics": {
-				"ElasticsearchService": "ES",
+		aws: {
+			analytics: {
+				ElasticsearchService: "ES",
 			},
-			"business": {
-				"AlexaForBusiness": "A4B"
+			business: {
+				AlexaForBusiness: "A4B"
 			},
-			"blockchain": {
-				"QuantumLedgerDatabaseQldb": "QLDB"
+			blockchain: {
+				QuantumLedgerDatabaseQldb: "QLDB"
 			},
-			"compute": {
-				"ApplicationAutoScaling": "AutoScaling",
-				"EC2Ami": "AMI",
-				"EC2ContainerRegistry": "ECR",
-				"ElasticBeanstalk": "EB",
-				"ElasticContainerService": "ECS",
-				"ElasticKubernetesService": "EKS",
-				"ServerlessApplicationRepository": "SAR",
+			compute: {
+				ApplicationAutoScaling: "AutoScaling",
+				EC2Ami: "AMI",
+				EC2ContainerRegistry: "ECR",
+				ElasticBeanstalk: "EB",
+				ElasticContainerService: "ECS",
+				ElasticKubernetesService: "EKS",
+				ServerlessApplicationRepository: "SAR",
 			},
-			"database": {
-				"DatabaseMigrationService": "DMS",
-				"DocumentdbMongodbCompatibility": "DocumentDB",
-				"DynamodbDax": "DAX",
-				"DynamodbGlobalSecondaryIndex": "DynamodbGSI",
-				"Database": "DB",
-				"Dynamodb": "DDB",
-				"Elasticache": "ElastiCache",
-				"QuantumLedgerDatabaseQldb": "QLDB",
+			database: {
+				DatabaseMigrationService: "DMS",
+				DocumentdbMongodbCompatibility: "DocumentDB",
+				DynamodbDax: "DAX",
+				DynamodbGlobalSecondaryIndex: "DynamodbGSI",
+				Database: "DB",
+				Dynamodb: "DDB",
+				Elasticache: "ElastiCache",
+				QuantumLedgerDatabaseQldb: "QLDB",
 			},
-			"devtools": {
-				"CommandLineInterface": "CLI",
-				"DeveloperTools": "DevTools",
+			devtools: {
+				CommandLineInterface: "CLI",
+				DeveloperTools: "DevTools",
 			},
-			"engagement": {
-				"SimpleEmailServiceSes": "SES",
+			engagement: {
+				SimpleEmailServiceSes: "SES",
 			},
-			"general": {
-				"GenericOfficeBuilding": "OfficeBuilding",
+			general: {
+				GenericOfficeBuilding: "OfficeBuilding",
 			},
-			"integration": {
-				"SimpleNotificationServiceSns": "SNS",
-				"SimpleQueueServiceSqs": "SQS",
-				"StepFunctions": "SF",
+			integration: {
+				SimpleNotificationServiceSns: "SNS",
+				SimpleQueueServiceSqs: "SQS",
+				StepFunctions: "SF",
 			},
-			"iot": {
-				"Freertos": "FreeRTOS",
-				"IotHardwareBoard": "IotBoard",
+			iot: {
+				Freertos: "FreeRTOS",
+				IotHardwareBoard: "IotBoard",
 			},
-			"management": {
-				"SystemsManager": "SSM",
-				"SystemsManagerParameterStore": "ParameterStore",
+			management: {
+				SystemsManager: "SSM",
+				SystemsManagerParameterStore: "ParameterStore",
 			},
-			"migration": {
-				"ApplicationDiscoveryService": "ADS",
-				"CloudendureMigration": "CEM",
-				"DatabaseMigrationService": "DMS",
-				"MigrationAndTransfer": "MAT",
-				"ServerMigrationService": "SMS",
+			migration: {
+				ApplicationDiscoveryService: "ADS",
+				CloudendureMigration: "CEM",
+				DatabaseMigrationService: "DMS",
+				MigrationAndTransfer: "MAT",
+				ServerMigrationService: "SMS",
 			},
-			"ml": {
-				"DeepLearningContainers": "DLC",
+			ml: {
+				DeepLearningContainers: "DLC",
 			},
-			"network": {
-				"CloudFront": "CF",
-				"ElasticLoadBalancing": "ELB",
-				"ElbApplicationLoadBalancer": "ALB",
-				"ElbClassicLoadBalancer": "CLB",
-				"ElbNetworkLoadBalancer": "NLB",
-				"GlobalAccelerator": "GAX",
+			network: {
+				CloudFront: "CF",
+				ElasticLoadBalancing: "ELB",
+				ElbApplicationLoadBalancer: "ALB",
+				ElbClassicLoadBalancer: "CLB",
+				ElbNetworkLoadBalancer: "NLB",
+				GlobalAccelerator: "GAX",
 			},
-			"security": {
-				"CertificateManager": "ACM",
-				"Cloudhsm": "CloudHSM",
-				"DirectoryService": "DS",
-				"FirewallManager": "FMS",
-				"IdentityAndAccessManagementIamAccessAnalyzer": "IAMAccessAnalyzer",
-				"IdentityAndAccessManagementIamAWSSts": "IAMAWSSts",
-				"IdentityAndAccessManagementIamPermissions": "IAMPermissions",
-				"IdentityAndAccessManagementIamRole": "IAMRole",
-				"IdentityAndAccessManagementIam": "IAM",
-				"KeyManagementService": "KMS",
-				"ResourceAccessManager": "RAM",
+			security: {
+				CertificateManager: "ACM",
+				Cloudhsm: "CloudHSM",
+				DirectoryService: "DS",
+				FirewallManager: "FMS",
+				IdentityAndAccessManagementIamAccessAnalyzer: "IAMAccessAnalyzer",
+				IdentityAndAccessManagementIamAWSSts: "IAMAWSSts",
+				IdentityAndAccessManagementIamPermissions: "IAMPermissions",
+				IdentityAndAccessManagementIamRole: "IAMRole",
+				IdentityAndAccessManagementIam: "IAM",
+				KeyManagementService: "KMS",
+				ResourceAccessManager: "RAM",
 			},
-			"storage": {
-				"CloudendureDisasterRecovery": "CDR",
-				"ElasticBlockStoreEBS": "EBS",
-				"ElasticFileSystemEFS": "EFS",
-				"Fsx": "FSx",
-				"SimpleStorageServiceS3": "S3",
+			storage: {
+				CloudendureDisasterRecovery: "CDR",
+				ElasticBlockStoreEBS: "EBS",
+				ElasticFileSystemEFS: "EFS",
+				Fsx: "FSx",
+				SimpleStorageServiceS3: "S3",
 			},
 		},
 	}

@@ -98,16 +98,16 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"openstack": {
-			"user": {
-				"Openstackclient": "OpenStackClient",
+		openstack: {
+			user: {
+				Openstackclient: "OpenStackClient",
 			},
-			"billing": {
-				"Cloudkitty": "CloudKitty",
+			billing: {
+				Cloudkitty: "CloudKitty",
 			},
-			"deployment": {
-				"Kolla": "KollaAnsible",
-				"Tripleo": "TripleO",
+			deployment: {
+				Kolla: "KollaAnsible",
+				Tripleo: "TripleO",
 			}
 		},
 	}

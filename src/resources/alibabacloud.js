@@ -124,55 +124,55 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"alibabacloud": {
-			"application": {
-				"LogService": "SLS",
-				"MessageNotificationService": "MNS",
-				"PerformanceTestingService": "PTS",
-				"SmartConversationAnalysis": "SCA",
+		alibabacloud: {
+			application: {
+				LogService: "SLS",
+				MessageNotificationService: "MNS",
+				PerformanceTestingService: "PTS",
+				SmartConversationAnalysis: "SCA",
 			},
-			"compute": {
-				"AutoScaling": "ESS",
-				"ElasticComputeService": "ECS",
-				"ElasticContainerInstance": "ECI",
-				"ElasticHighPerformanceComputing": "EHPC",
-				"FunctionCompute": "FC",
-				"OperationOrchestrationService": "OOS",
-				"ResourceOrchestrationService": "ROS",
-				"ServerLoadBalancer": "SLB",
-				"ServerlessAppEngine": "SAE",
-				"SimpleApplicationServer": "SAS",
-				"WebAppService": "WAS",
+			compute: {
+				AutoScaling: "ESS",
+				ElasticComputeService: "ECS",
+				ElasticContainerInstance: "ECI",
+				ElasticHighPerformanceComputing: "EHPC",
+				FunctionCompute: "FC",
+				OperationOrchestrationService: "OOS",
+				ResourceOrchestrationService: "ROS",
+				ServerLoadBalancer: "SLB",
+				ServerlessAppEngine: "SAE",
+				SimpleApplicationServer: "SAS",
+				WebAppService: "WAS",
 			},
-			"database": {
-				"DataManagementService": "DMS",
-				"DataTransmissionService": "DTS",
-				"DatabaseBackupService": "DBS",
-				"DisributeRelationalDatabaseService": "DRDS",
-				"GraphDatabaseService": "GDS",
-				"RelationalDatabaseService": "RDS",
+			database: {
+				DataManagementService: "DMS",
+				DataTransmissionService: "DTS",
+				DatabaseBackupService: "DBS",
+				DisributeRelationalDatabaseService: "DRDS",
+				GraphDatabaseService: "GDS",
+				RelationalDatabaseService: "RDS",
 			},
-			"network": {
-				"CloudEnterpriseNetwork": "CEN",
-				"ElasticIpAddress": "EIP",
-				"ServerLoadBalancer": "SLB",
-				"VirtualPrivateCloud": "VPC",
+			network: {
+				CloudEnterpriseNetwork: "CEN",
+				ElasticIpAddress: "EIP",
+				ServerLoadBalancer: "SLB",
+				VirtualPrivateCloud: "VPC",
 			},
-			"security": {
-				"AntiBotService": "ABS",
-				"AntifraudService": "AS",
-				"CloudFirewall": "CFW",
-				"ContentModeration": "CM",
-				"DataEncryptionService": "DES",
-				"WebApplicationFirewall": "WAF",
+			security: {
+				AntiBotService: "ABS",
+				AntifraudService: "AS",
+				CloudFirewall: "CFW",
+				ContentModeration: "CM",
+				DataEncryptionService: "DES",
+				WebApplicationFirewall: "WAF",
 			},
-			"storage": {
-				"FileStorageHdfs": "HDFS",
-				"FileStorageNas": "NAS",
-				"HybridBackupRecovery": "HBR",
-				"HybridCloudDisasterRecovery": "HDR",
-				"ObjectStorageService": "OSS",
-				"ObjectTableStore": "OTS",
+			storage: {
+				FileStorageHdfs: "HDFS",
+				FileStorageNas: "NAS",
+				HybridBackupRecovery: "HBR",
+				HybridCloudDisasterRecovery: "HDR",
+				ObjectStorageService: "OSS",
+				ObjectTableStore: "OTS",
 			}
 		},
 	}

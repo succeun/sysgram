@@ -42,9 +42,9 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"firebase": {
-			"grow": {
-				"Messaging": "FCM"
+		firebase: {
+			grow: {
+				Messaging: "FCM"
 			}
 		},
 	}

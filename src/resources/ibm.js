@@ -2,15 +2,15 @@ function getResources() {
 	var resources = {
 		baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
 		
-		"ibm": {
-			"analytics": {
+		ibm: {
+			analytics: {
 				Analytics: "analytics.png",
 				DataIntegration: "data-integration.png",
 				DataRepositories: "data-repositories.png",
 				DeviceAnalytics: "device-analytics.png",
 				StreamingComputing: "streaming-computing.png",
 			},
-			"applications": {
+			applications: {
 				ActionableInsight: "actionable-insight.png",
 				Annotate: "annotate.png",
 				ApiDeveloperPortal: "api-developer-portal.png",
@@ -31,7 +31,7 @@ function getResources() {
 				VisualRecognition: "visual-recognition.png",
 				Visualization: "visualization.png",
 			},
-			"blockchain": {
+			blockchain: {
 				BlockchainDeveloper: "blockchain-developer.png",
 				Blockchain: "blockchain.png",
 				CertificateAuthority: "certificate-authority.png",
@@ -53,14 +53,14 @@ function getResources() {
 				TransactionManager: "transaction-manager.png",
 				Wallet: "wallet.png",
 			},
-			"compute": {
+			compute: {
 				BareMetalServer: "bare-metal-server.png",
 				ImageService: "image-service.png",
 				Instance: "instance.png",
 				Key: "key.png",
 				PowerInstance: "power-instance.png",
 			},
-			"data": {
+			data: {
 				Caches: "caches.png",
 				Cloud: "cloud.png",
 				ConversationTrainedDeployed: "conversation-trained-deployed.png",
@@ -75,7 +75,7 @@ function getResources() {
 				Model: "model.png",
 				TmsDataInterface: "tms-data-interface.png",
 			},
-			"devops": {
+			devops: {
 				ArtifactManagement: "artifact-management.png",
 				BuildTest: "build-test.png",
 				CodeEditor: "code-editor.png",
@@ -87,7 +87,7 @@ function getResources() {
 				Provision: "provision.png",
 				ReleaseManagement: "release-management.png",
 			},
-			"general": {
+			general: {
 				CloudMessaging: "cloud-messaging.png",
 				CloudServices: "cloud-services.png",
 				Cloudant: "cloudant.png",
@@ -116,7 +116,7 @@ function getResources() {
 				TextToSpeech: "text-to-speech.png",
 				TransformationConnectivity: "transformation-connectivity.png",
 			},
-			"infrastructure": {
+			infrastructure: {
 				Channels: "channels.png",
 				CloudMessaging: "cloud-messaging.png",
 				Dashboard: "dashboard.png",
@@ -136,7 +136,7 @@ function getResources() {
 				ServiceDiscoveryConfiguration: "service-discovery-configuration.png",
 				TransformationConnectivity: "transformation-connectivity.png",
 			},
-			"management": {
+			management: {
 				AlertNotification: "alert-notification.png",
 				ApiManagement: "api-management.png",
 				CloudManagement: "cloud-management.png",
@@ -153,7 +153,7 @@ function getResources() {
 				PushNotifications: "push-notifications.png",
 				ServiceManagementTools: "service-management-tools.png",
 			},
-			"network": {
+			network: {
 				Bridge: "bridge.png",
 				DirectLink: "direct-link.png",
 				Enterprise: "rnterprise.png",
@@ -176,7 +176,7 @@ function getResources() {
 				VpnGateway: "vpn-gateway.png",
 				VpnPolicy: "vpn-policy.png",
 			},
-			"security": {
+			security: {
 				ApiSecurity: "api-security.png",
 				BlockchainSecurityService: "blockchain-security-service.png",
 				DataSecurity: "data-security.png",
@@ -192,18 +192,18 @@ function getResources() {
 				TrustendComputing: "trustend-computing.png",
 				Vpn: "vpn.png",
 			},
-			"social": {
+			social: {
 				Communities: "communities.png",
 				FileSync: "file-sync.png",
 				LiveCollaboration: "live-collaboration.png",
 				Messaging: "messaging.png",
 				Networking: "networking.png",
 			},
-			"storage": {
+			storage: {
 				BlockStorage: "block-storage.png",
 				ObjectStorage: "object-storage.png",
 			},
-			"user": {
+			user: {
 				Browser: "browser.png",
 				Device: "device.png",
 				IntegratedDigitalExperiences: "integrated-digital-experiences.png",
@@ -218,23 +218,23 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"ibm": {
-			"network": {
-				"ACL": "Rules",
-				"CIS": "InternetServices",
-				"DL": "DirectLink",
-				"FIP": "FloatingIp",
-				"FloatingIP": "FloatingIp",
-				"FW": "Firewall",
-				"LB": "LoadBalancer",
-				"NLB": "LoadBalancer",
-				"PublicGateway": "Gateway",
-				"SecurityGroupRules": "Rules",
-				"TG": "TransitGateway",
-				"VPC": "Vpc",
-				"VPNGateway": "VpnGateway",
-				"VPNConnection": "VpnConnection",
-				"VPNPolicy": "VpnPolicy",
+		ibm: {
+			network: {
+				ACL: "Rules",
+				CIS: "InternetServices",
+				DL: "DirectLink",
+				FIP: "FloatingIp",
+				FloatingIP: "FloatingIp",
+				FW: "Firewall",
+				LB: "LoadBalancer",
+				NLB: "LoadBalancer",
+				PublicGateway: "Gateway",
+				SecurityGroupRules: "Rules",
+				TG: "TransitGateway",
+				VPC: "Vpc",
+				VPNGateway: "VpnGateway",
+				VPNConnection: "VpnConnection",
+				VPNPolicy: "VpnPolicy",
 			}
 		},
 	}

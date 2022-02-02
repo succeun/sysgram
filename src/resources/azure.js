@@ -233,11 +233,11 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"azure": {
-			"compute": {
-				"ContainerRegistries": "ACR",
-				"KubernetesServices": "AKS",
-				"VMScaleSet": "VMSS"
+		azure: {
+			compute: {
+				ContainerRegistries: "ACR",
+				KubernetesServices: "AKS",
+				VMScaleSet: "VMSS"
 			},
 		},
 	}

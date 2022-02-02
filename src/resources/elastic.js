@@ -48,9 +48,9 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"elastic": {
-			"elasticsearch": {
-				"Logstash": "LogStash",
+		elastic: {
+			elasticsearch: {
+				Logstash: "LogStash",
 			}
 		},
 	}

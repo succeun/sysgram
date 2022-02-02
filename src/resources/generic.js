@@ -50,7 +50,7 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"generic": {},
+		generic: {},
 	}
 	
 	///////////////////////////////////////////////////////////////////////////

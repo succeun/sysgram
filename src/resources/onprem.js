@@ -222,66 +222,66 @@ function getResources() {
 	// https://github.com/mingrammer/diagrams/blob/master/config.py
 	
 	var ALIASES = {
-		"onprem": {
-			"analytics": {
-				"Powerbi": "PowerBI"
+		onprem: {
+			analytics: {
+				Powerbi: "PowerBI"
 			},
-			"ci": {
-				"Circleci": "CircleCI",
-				"Concourseci": "ConcourseCI",
-				"Droneci": "DroneCI",
-				"Gitlabci": "GitlabCI",
-				"Travisci": "TravisCI",
-				"Teamcity": "TC",
-				"Zuulci": "ZuulCI",
+			ci: {
+				Circleci: "CircleCI",
+				Concourseci: "ConcourseCI",
+				Droneci: "DroneCI",
+				Gitlabci: "GitlabCI",
+				Travisci: "TravisCI",
+				Teamcity: "TC",
+				Zuulci: "ZuulCI",
 			},
-			"container": {
-				"Lxc": "LXC",
-				"Rkt": "RKT",
+			container: {
+				Lxc: "LXC",
+				Rkt: "RKT",
 			},
-			"database": {
-				"Clickhouse": "ClickHouse",
-				"Cockroachdb": "CockroachDB",
-				"Couchdb": "CouchDB",
-				"Hbase": "HBase",
-				"Influxdb": "InfluxDB",
-				"Janusgraph": "JanusGraph",
-				"Mariadb": "MariaDB",
-				"Mongodb": "MongoDB",
-				"Mssql": "MSSQL",
-				"Mysql": "MySQL",
-				"Postgresql": "PostgreSQL",
+			database: {
+				Clickhouse: "ClickHouse",
+				Cockroachdb: "CockroachDB",
+				Couchdb: "CouchDB",
+				Hbase: "HBase",
+				Influxdb: "InfluxDB",
+				Janusgraph: "JanusGraph",
+				Mariadb: "MariaDB",
+				Mongodb: "MongoDB",
+				Mssql: "MSSQL",
+				Mysql: "MySQL",
+				Postgresql: "PostgreSQL",
 			},
-			"gitops": {
-				"Argocd": "ArgoCD",
+			gitops: {
+				Argocd: "ArgoCD",
 			},
-			"logging": {
-				"Fluentbit": "FluentBit",
-				"Rsyslog": "RSyslog",
+			logging: {
+				Fluentbit: "FluentBit",
+				Rsyslog: "RSyslog",
 			},
-			"network": {
-				"Etcd": "ETCD",
-				"Haproxy": "HAProxy",
-				"OpenServiceMesh": "OSM",
-				"Opnsense": "OPNSense",
-				"Pfsense": "PFSense",
-				"Vyos": "VyOS"
+			network: {
+				Etcd: "ETCD",
+				Haproxy: "HAProxy",
+				OpenServiceMesh: "OSM",
+				Opnsense: "OPNSense",
+				Pfsense: "PFSense",
+				Vyos: "VyOS"
 			},
-			"proxmox": {
-				"Pve": "ProxmoxVE",
+			proxmox: {
+				Pve: "ProxmoxVE",
 			},
-			"queue": {
-				"Activemq": "ActiveMQ",
-				"Rabbitmq": "RabbitMQ",
-				"Zeromq": "ZeroMQ",
+			queue: {
+				Activemq: "ActiveMQ",
+				Rabbitmq: "RabbitMQ",
+				Zeromq: "ZeroMQ",
 			},
-			"storage": {
-				"Ceph": "CEPH",
-				"CephOsd": "CEPH_OSD",
+			storage: {
+				Ceph: "CEPH",
+				CephOsd: "CEPH_OSD",
 			},
-			"workflow": {
-				"Kubeflow": "KubeFlow",
-				"Nifi": "NiFi",
+			workflow: {
+				Kubeflow: "KubeFlow",
+				Nifi: "NiFi",
 			}
 		},
 	}
