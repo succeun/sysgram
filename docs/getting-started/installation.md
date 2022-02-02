@@ -19,14 +19,6 @@ Latest Version: [https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js](https:
 It can insert a `script` tag with an absolute address and a `sysgram` call into the HTML like so:
 
 ```html
-<!-- canvg for converting image (Optional) -->
-<script src="https://unpkg.com/canvg@3.0.7/lib/umd.js"></script> 
-
-<!-- d3 & d3-graphviz (Mandatory) -->
-<script src="https://unpkg.com/d3@6.7.0/dist/d3.min.js"></script>
-<script src="https://unpkg.com/@hpcc-js/wasm@1.5.2/dist/index.min.js"></script>
-<script src="https://unpkg.com/d3-graphviz@4.0.0/build/d3-graphviz.js"></script>
-
 <!-- sysgram (latest) -->
 <script src="https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js"></script>
   
