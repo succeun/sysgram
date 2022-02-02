@@ -3,8 +3,8 @@
 **Sysgram.js draw the system architecture using JavaScript.**
 
 [![npm version](https://img.shields.io/npm/v/sysgram.svg?style=flat)](https://www.npmjs.com/package/sysgram)
-[![unpkg](https://img.badgesize.io/https://unpkg.com/sysgram.js/dist/sysgram.js?compression=gzip&label=unpkg&style=flat&cache=false)](https://unpkg.com/sysgram.js/dist/sysgram.js)
-[![unpkg min](https://img.badgesize.io/https:/unpkg.com/sysgram/dist/sysgram.min.js?label=unpkg%20min&compression=gzip&cache=false&style=flat)](https://unpkg.com/sysgram.js/dist/sysgram.min.js)
+[![unpkg](https://img.badgesize.io/https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js?compression=gzip&label=unpkg&style=flat&cache=false)](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
+[![unpkg min](https://img.badgesize.io/https:/unpkg.com/sysgram/dist/sysgram.bundle.min.js?label=unpkg%20min&compression=gzip&cache=false&style=flat)](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
 
 It is a Javascript based diagramming tool that renders from javascript syntax to create and modify diagrams dynamically. 
 
@@ -27,14 +27,14 @@ It is a Javascript based diagramming tool that renders from javascript syntax to
 ## CDN
 
 ```
-https://unpkg.com/sysgram.js@<version>/dist/sysgram.min.js
+https://unpkg.com/sysgram.js@<version>/dist/sysgram.bundle.min.js
 ```
 
 To select a version:
 
 Replace `<version>` with the desired version number.
 
-Latest Version: [https://unpkg.com/sysgram.js/dist/sysgram.min.js](https://unpkg.com/sysgram.js/dist/sysgram.min.js)
+Latest Version: [https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
 
 
 
@@ -44,7 +44,7 @@ It can insert a `script` tag with an absolute address and a `sysgram` call into 
 
 ```html
 <!-- sysgram (latest) -->
-<script src="https://unpkg.com/sysgram.js/dist/sysgram.min.js"></script>
+<script src="https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js"></script>
 <script>
 function drawSample() {
     var EC2 = diagrams.aws.compute.EC2
@@ -99,7 +99,7 @@ Below is the most basic and simple example html.
 <html>
 <head>
 	<!-- sysgram (latest) -->
-	<script src="https://unpkg.com/sysgram.js/dist/sysgram.min.js"></script>
+	<script src="https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js"></script>
 	<script>sysgram.initialize({startOnLoad:true});</script>
 <head>
 <body>

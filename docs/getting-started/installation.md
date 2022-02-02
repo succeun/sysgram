@@ -5,14 +5,14 @@
 ## CDN
 
 ```
-https://unpkg.com/sysgram.js@<version>/dist/sysgram.min.js
+https://unpkg.com/sysgram.js@<version>/dist/sysgram.bundle.min.js
 ```
 
 To select a version:
 
 Replace `<version>` with the desired version number.
 
-Latest Version: [https://unpkg.com/sysgram.js/dist/sysgram.min.js](https://unpkg.com/sysgram.js/dist/sysgram.min.js)
+Latest Version: [https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
 
 ## Installing
 
@@ -28,7 +28,7 @@ It can insert a `script` tag with an absolute address and a `sysgram` call into 
 <script src="https://unpkg.com/d3-graphviz@4.0.0/build/d3-graphviz.js"></script>
 
 <!-- sysgram (latest) -->
-<script src="https://unpkg.com/sysgram.js/dist/sysgram.min.js"></script>
+<script src="https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js"></script>
   
 <script>sysgram.initialize({startOnLoad:true});</script>
 ```

@@ -1,6 +1,6 @@
 {
 	"name": "sysgram.js",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Sysgram.js draw the system architecture using JavaScript.",
 	"main": "dist/sysgram.bundle.js",
 	"unpkg": "dist/sysgram.min.bundle.js",
