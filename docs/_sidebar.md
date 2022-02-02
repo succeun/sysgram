@@ -30,6 +30,7 @@
   - [Generic](nodes/generic.md)
   - [Programming](nodes/programming.md)
   - [Saas](nodes/saas.md)
+  - [DigitalOcean](nodes/digitalocean.md)
   - [Program](nodes/program.md)
   - [SuperTinyIcons](nodes/supertinyicons.md)
   - [Custom](nodes/custom.md)

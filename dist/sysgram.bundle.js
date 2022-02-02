@@ -40574,6 +40574,86 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function getResources() {
   var resources = {
+    baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
+    digitalocean: {
+      compute: {
+        Containers: "containers.png",
+        Docker: "docker.png",
+        DropletConnect: "droplet-connect.png",
+        DropletSnapshot: "droplet-snapshot.png",
+        Droplet: "droplet.png",
+        K8SCluster: "k8s-cluster.png",
+        K8SNodePool: "k8s-node-pool.png",
+        K8SNode: "k8s-node.png"
+      },
+      database: {
+        DbaasPrimaryStandbyMore: "dbaas-primary-standby-more.png",
+        DbaasPrimary: "dbaas-primary.png",
+        DbaasReadOnly: "dbaas-read-only.png",
+        DbaasStandby: "dbaas-standby.png"
+      },
+      network: {
+        Certificate: "certificate.png",
+        DomainRegistration: "domain-registration.png",
+        Domain: "domain.png",
+        Firewall: "firewall.png",
+        FloatingIp: "floating-ip.png",
+        InternetGateway: "internet-gateway.png",
+        LoadBalancer: "load-balancer.png",
+        ManagedVpn: "managed-vpn.png",
+        Vpc: "vpc.png"
+      },
+      storage: {
+        Folder: "folder.png",
+        Space: "space.png",
+        VolumeSnapshot: "volume-snapshot.png",
+        Volume: "volume.png"
+      }
+    }
+  }; ///////////////////////////////////////////////////////////////////////////
+  // https://github.com/mingrammer/diagrams/blob/master/config.py
+
+  var ALIASES = {}; ///////////////////////////////////////////////////////////////////////////
+
+  function merge(src, node) {
+    for (var x in node) {
+      var aliase = node[x];
+
+      if (aliase) {
+        if (typeof aliase == "string") {
+          var obj = src[x];
+
+          if (obj) {
+            src[aliase] = obj;
+          }
+        } else {
+          if (src[x]) {
+            merge(src[x], node[x]);
+          } else {
+            src[x] = node[x];
+          }
+        }
+      }
+    }
+  }
+
+  merge(resources, ALIASES);
+  return resources;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResources());
+
+/***/ }),
+/* 538 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getResources() {
+  var resources = {
     program: {
       // https://github.com/alrra/browser-logos/blob/main/src/README.md
       browser: {
@@ -41123,7 +41203,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var canvg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var d3_selection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(377);
+/* harmony import */ var d3_selection__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(377);
 /* harmony import */ var d3_graphviz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(374);
 /* harmony import */ var d3_graphviz__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(d3_graphviz__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _resources_alibabacloud__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(522);
@@ -41141,11 +41221,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _resources_outscale__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(534);
 /* harmony import */ var _resources_programming__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(535);
 /* harmony import */ var _resources_saas__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(536);
-/* harmony import */ var _resources_additional__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(537);
+/* harmony import */ var _resources_digitalocean__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(537);
+/* harmony import */ var _resources_additional__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(538);
 
 
 
 const _ = d3_graphviz__WEBPACK_IMPORTED_MODULE_1__.graphviz;
+
 
 
 
@@ -41177,7 +41259,8 @@ var diagramResources = { ..._resources_alibabacloud__WEBPACK_IMPORTED_MODULE_2__
   ..._resources_outscale__WEBPACK_IMPORTED_MODULE_14__.default,
   ..._resources_programming__WEBPACK_IMPORTED_MODULE_15__.default,
   ..._resources_saas__WEBPACK_IMPORTED_MODULE_16__.default,
-  ..._resources_additional__WEBPACK_IMPORTED_MODULE_17__.default
+  ..._resources_digitalocean__WEBPACK_IMPORTED_MODULE_17__.default,
+  ..._resources_additional__WEBPACK_IMPORTED_MODULE_18__.default
 }; // sysgram.js
 // version : ${SYSDIAGRAM_VERSION}
 // authors : Jeong-Ho, Eun
@@ -42220,7 +42303,7 @@ function createGraphviz(selectorOrElement, graphvizOptions) {
     throw new Error("The selector or element is null or emtpy.");
   }
 
-  var graphviz = d3_selection__WEBPACK_IMPORTED_MODULE_18__.default(selectorOrElement).graphviz(graphvizOptions);
+  var graphviz = d3_selection__WEBPACK_IMPORTED_MODULE_19__.default(selectorOrElement).graphviz(graphvizOptions);
   element.graphviz = graphviz; // Assigned sysgram reference
 
   graphviz.sysgram_ctx = cloneObject(ctx);
@@ -42701,7 +42784,7 @@ function addCSSRule(rule) {
 
 
 var sysgram = {
-  version: "0.1.0",
+  version: "0.1.1",
   initialize: initialize,
   init: init,
   initWithCode: initWithCode,
@@ -42719,7 +42802,7 @@ var sysgram = {
 
 function highlight(config) {
   return function (element, graphviz) {
-    var elt = d3_selection__WEBPACK_IMPORTED_MODULE_18__.default(element);
+    var elt = d3_selection__WEBPACK_IMPORTED_MODULE_19__.default(element);
     var nodes = elt.selectAll(".node");
     var edges = elt.selectAll(".edge");
     var clusters = elt.selectAll(".cluster");

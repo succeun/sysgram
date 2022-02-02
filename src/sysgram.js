@@ -18,6 +18,7 @@ import openstack from "./resources/openstack";
 import outscale from "./resources/outscale";
 import programming from "./resources/programming";
 import saas from "./resources/saas";
+import digitalocean from "./resources/digitalocean";
 import additional from "./resources/additional";
 
 var diagramResources = {
@@ -36,6 +37,7 @@ var diagramResources = {
 	...outscale, 
 	...programming, 
 	...saas,
+	...digitalocean,
 	...additional 
 };
 
