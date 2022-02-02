@@ -364,9 +364,9 @@ Diagram("Grouped Workers", () => {
 ```js
 ctx.attributes.digraph.splines = 'line'    // Changed graphviz digraph splines
 
-var WEB = (name, attrs) => Node(name, attrs, "../images/web.png")
-var WAS = (name, attrs) => Node(name, attrs, "../images/was.png")
-var DB = (name, attrs) => Node(name, attrs, "../images/database.png")
+var WEB = (name, attrs) => Node(name, attrs, "./images/web.png")
+var WAS = (name, attrs) => Node(name, attrs, "./images/was.png")
+var DB = (name, attrs) => Node(name, attrs, "./images/database.png")
 
 Diagram("Repeat Custom", () => {
     Cluster("Web Servers", () => {
