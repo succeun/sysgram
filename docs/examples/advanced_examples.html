@@ -177,17 +177,17 @@
 			<code>
 ctx.attributes.subgraph.labeljust = 'c'
 
-var Man1 = (name, attrs) => Node(name, attrs, "../docs/images/man1.png")
-var Woman1 = (name, attrs) => Node(name, attrs, "../docs/images/woman1.png")
+var Man1 = (name, attrs) => Node(name, attrs, "../images/man1.png")
+var Woman1 = (name, attrs) => Node(name, attrs, "../images/woman1.png")
 
-var Man2 = (name, attrs) => Node(name, attrs, "../docs/images/man2.png");
-var Woman2 = (name, attrs) => Node(name, attrs, "../docs/images/woman2.png");
+var Man2 = (name, attrs) => Node(name, attrs, "../images/man2.png");
+var Woman2 = (name, attrs) => Node(name, attrs, "../images/woman2.png");
 
-var Man3 = (name, attrs) => Node(name, attrs, "../docs/images/man3.png");
-var Woman3 = (name, attrs) => Node(name, attrs, "../docs/images/woman3.png");
+var Man3 = (name, attrs) => Node(name, attrs, "../images/man3.png");
+var Woman3 = (name, attrs) => Node(name, attrs, "../images/woman3.png");
 
-var Man4 = (name, attrs) => Node(name, attrs, "../docs/images/man4.png");
-var Woman4 = (name, attrs) => Node(name, attrs, "../docs/images/woman4.png");
+var Man4 = (name, attrs) => Node(name, attrs, "../images/man4.png");
+var Woman4 = (name, attrs) => Node(name, attrs, "../images/woman4.png");
 
 Diagram("Organization", function() {
     Cluster("CEO", function() {
@@ -593,9 +593,9 @@ Diagram("Grouped Workers", () => {
 			<code>
 ctx.attributes.digraph.splines = 'line'    // Changed graphviz digraph splines
 
-var WEB = (name, attrs) => Node(name, attrs, "../docs/images/web.png")
-var WAS = (name, attrs) => Node(name, attrs, "../docs/images/was.png")
-var DB = (name, attrs) => Node(name, attrs, "../docs/images/database.png")
+var WEB = (name, attrs) => Node(name, attrs, "../images/web.png")
+var WAS = (name, attrs) => Node(name, attrs, "../images/was.png")
+var DB = (name, attrs) => Node(name, attrs, "../images/database.png")
 
 Diagram("Repeat Custom", () => {
     Cluster("Web Servers", () => {

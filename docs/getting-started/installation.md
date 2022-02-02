@@ -6,17 +6,20 @@
 
 ```
 https://unpkg.com/sysgram.js@<version>/dist/sysgram.bundle.min.js
+https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.min.js
 ```
 
 To select a version:
 
 Replace `<version>` with the desired version number.
 
-Latest Version: [https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
+Latest Version: 
+- [https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
+- [https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.min.js](https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.min.js)
 
 ## Installing
 
-It can insert a `script` tag with an absolute address and a `sysgram` call into the HTML like so:
+It can insert a `script` tag with an absolute address and a `sysgram.js` call into the HTML like so:
 
 ```html
 <!-- sysgram (latest) -->

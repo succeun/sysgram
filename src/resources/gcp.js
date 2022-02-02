@@ -16,6 +16,7 @@ function getResources() {
 				Pubsub: "pubsub.png",
 			},
 			api: {
+				APIGateway: "api-gateway.png",
 				Endpoints: "endpoints.png",
 			},
 			compute: {

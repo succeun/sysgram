@@ -66,7 +66,10 @@ function getResources() {
 				Scala: "scala.png",
 				Swift: "swift.png",
 				Typescript: "typescript.png",
-			}
+			},
+			runtime: {
+				Dapr: "dapr.png",
+			},
 		},
 	};
 	

@@ -10,8 +10,9 @@
 	"scripts": {
 		"docs": "docsify serve ./docs",
 		"dev": "http-server -p 40000",
-		"build": "webpack && npm run copy:wasm",
-		"copy:wasm": "cpx -p node_modules/d3-graphviz/node_modules/@hpcc-js/wasm/dist/graphvizlib.wasm ./dist"
+		"build": "webpack && npm run copy:wasm && npm run copy:dist",
+		"copy:wasm": "cpx -p node_modules/d3-graphviz/node_modules/@hpcc-js/wasm/dist/graphvizlib.wasm ./dist",
+		"copy:dist": "cpx -p ./dist/* ./docs/dist"
 	},
 	"repository": {
 		"type": "git",

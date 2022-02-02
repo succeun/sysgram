@@ -283,6 +283,7 @@ function getResources() {
 			},
 			management: {
 				AutoScaling: "auto-scaling.png",
+				Chatbot: "chatbot.png",
 				CloudformationChangeSet: "cloudformation-change-set.png",
 				CloudformationStack: "cloudformation-stack.png",
 				CloudformationTemplate: "cloudformation-template.png",
