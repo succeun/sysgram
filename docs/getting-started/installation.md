@@ -6,7 +6,7 @@
 
 ```
 https://unpkg.com/sysgram.js@<version>/dist/sysgram.bundle.min.js
-https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.min.js
+https://cdn.jsdelivr.net/gh/succeun/sysgram.js@<version>/dist/sysgram.bundle.min.js
 ```
 
 To select a version:
@@ -15,7 +15,7 @@ Replace `<version>` with the desired version number.
 
 Latest Version: 
 - [https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
-- [https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.min.js](https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.min.js)
+- [https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.min.js](https://cdn.jsdelivr.net/gh/succeun/sysgram.js/dist/sysgram.bundle.min.js)
 
 ## Installing
 

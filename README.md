@@ -10,6 +10,7 @@ It is a Javascript based diagramming tool that renders from javascript syntax to
 
 
 ## Sysgram.js currently supports seven major providers and others: 
+- [`On-Premise`](https://succeun.github.io/sysgram.js/#/nodes/onprem) 
 - [`AWS`](https://succeun.github.io/sysgram.js/#/nodes/aws)
 - [`Azure`](https://succeun.github.io/sysgram.js/#/nodes/azure)
 - [`GCP`](https://succeun.github.io/sysgram.js/#/nodes/gcp)
@@ -17,7 +18,11 @@ It is a Javascript based diagramming tool that renders from javascript syntax to
 - [`Alibaba Cloud`](https://succeun.github.io/sysgram.js/#/nodes/alibabacloud)
 - [`Oracle Cloud`](https://succeun.github.io/sysgram.js/#/nodes/ibmcloud)
 - [`IBM Cloud`](https://succeun.github.io/sysgram.js/#/nodes/oci)
-- [`On-Premise`](https://succeun.github.io/sysgram.js/#/nodes/onprem) 
+- [`Open Stack`](https://succeun.github.io/sysgram.js/#/nodes/openstack)
+- [`Firebase`](https://succeun.github.io/sysgram.js/#/nodes/firebase)
+- [`Outscale`](https://succeun.github.io/sysgram.js/#/nodes/outscale)
+- [`Elastic`](https://succeun.github.io/sysgram.js/#/nodes/elastic)
+- [`DigitalOcean`](https://succeun.github.io/sysgram.js/#/nodes/digitalocean)
 - [`Programming Languages`](https://succeun.github.io/sysgram.js/#/nodes/programming?id=programminglanguage)
 - [`Frameworks`](https://succeun.github.io/sysgram.js/#/nodes/programming?id=programmingframework)
 - [`Programs`](https://succeun.github.io/sysgram.js/#/nodes/program)
@@ -28,13 +33,16 @@ It is a Javascript based diagramming tool that renders from javascript syntax to
 
 ```
 https://unpkg.com/sysgram.js@<version>/dist/sysgram.bundle.min.js
+https://cdn.jsdelivr.net/gh/succeun/sysgram.js@<version>/dist/sysgram.bundle.min.js
 ```
 
 To select a version:
 
 Replace `<version>` with the desired version number.
 
-Latest Version: [https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
+Latest Version: 
+- [https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
+- [https://cdn.jsdelivr.net/gh/succeun/sysgram/dist/sysgram.bundle.min.js](https://cdn.jsdelivr.net/gh/succeun/sysgram.js/dist/sysgram.bundle.min.js)
 
 
 
