@@ -21,7 +21,7 @@ import saas from "./resources/saas";
 import digitalocean from "./resources/digitalocean";
 import additional from "./resources/additional";
 
-var diagramResources = {
+var defaultResources = {
 	...alibabacloud, 
 	...aws, 
 	...azure, 
@@ -1125,8 +1125,8 @@ var diagrams = {};	// Preset namespace resources to be used in scripts
 
 function loadResources(resourceJson, baseUrl) {
 	if (!isLoadedResources) {
-		resourceJson = resourceJson || diagramResources;
-		baseUrl = baseUrl || diagramResources.baseUrl;
+		resourceJson = resourceJson || defaultResources;
+		baseUrl = baseUrl || defaultResources.baseUrl;
 		
 		var baseUrl = baseUrl || "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources";
 		baseUrl = baseUrl.endsWith("/") ? baseUrl.substring(0, baseUrl.length - 1) : baseUrl;
@@ -1457,6 +1457,7 @@ var sysgram = {
 	initialize: initialize,
 	init: init,
 	initWithCode: initWithCode,
+	defaultResources: defaultResources,
 	loadResources: loadResources,
 	attributes: defaultAttrs,
 	generate: generate,
