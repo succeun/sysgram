@@ -2,7 +2,7 @@
 
 **Sysgram.js draw the system architecture using JavaScript.**
 
-[![npm version](https://img.shields.io/npm/v/sysgram.svg?style=flat)](https://www.npmjs.com/package/sysgram.js)
+[![npm version](https://img.shields.io/npm/v/sysgram.js.svg?style=flat)](https://www.npmjs.com/package/sysgram.js)
 [![unpkg](https://img.badgesize.io/https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js?compression=gzip&label=unpkg&style=flat&cache=false)](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
 [![unpkg min](https://img.badgesize.io/https:/unpkg.com/sysgram/dist/sysgram.bundle.min.js?label=unpkg%20min&compression=gzip&cache=false&style=flat)](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
 
