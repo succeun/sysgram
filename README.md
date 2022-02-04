@@ -2,31 +2,34 @@
 
 **Sysgram.js draw the system architecture using JavaScript.**
 
-[![npm version](https://img.shields.io/npm/v/sysgram.js.svg?style=flat)](https://www.npmjs.com/package/sysgram.js)
-[![unpkg](https://img.badgesize.io/https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js?compression=gzip&label=unpkg&style=flat&cache=false)](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
-[![unpkg min](https://img.badgesize.io/https:/unpkg.com/sysgram/dist/sysgram.bundle.min.js?label=unpkg%20min&compression=gzip&cache=false&style=flat)](https://unpkg.com/sysgram.js/dist/sysgram.bundle.min.js)
+[![npm version](https://img.shields.io/npm/v/sysgram.js.svg?style=for-the-badge&logo=Vercel&labelColor=000)](https://www.npmjs.com/package/sysgram.js)
+[![License](https://img.shields.io/npm/l/sysgram.js.svg?style=for-the-badge&labelColor=000000)](https://github.com/succeun/sysgram.js/blob/main/LICENSE)
 
 It is a Javascript based diagramming tool that renders from javascript syntax to create and modify diagrams dynamically. 
 
 
-## Sysgram.js currently supports seven major providers and others: 
-- [`On-Premise`](https://succeun.github.io/sysgram.js/#/nodes/onprem) 
-- [`AWS`](https://succeun.github.io/sysgram.js/#/nodes/aws)
-- [`Azure`](https://succeun.github.io/sysgram.js/#/nodes/azure)
-- [`GCP`](https://succeun.github.io/sysgram.js/#/nodes/gcp)
-- [`Kubernetes`](https://succeun.github.io/sysgram.js/#/nodes/k8s)
-- [`Alibaba Cloud`](https://succeun.github.io/sysgram.js/#/nodes/alibabacloud)
-- [`Oracle Cloud`](https://succeun.github.io/sysgram.js/#/nodes/ibmcloud)
-- [`IBM Cloud`](https://succeun.github.io/sysgram.js/#/nodes/oci)
-- [`Open Stack`](https://succeun.github.io/sysgram.js/#/nodes/openstack)
-- [`Firebase`](https://succeun.github.io/sysgram.js/#/nodes/firebase)
-- [`Outscale`](https://succeun.github.io/sysgram.js/#/nodes/outscale)
-- [`Elastic`](https://succeun.github.io/sysgram.js/#/nodes/elastic)
-- [`DigitalOcean`](https://succeun.github.io/sysgram.js/#/nodes/digitalocean)
-- [`Programming Languages`](https://succeun.github.io/sysgram.js/#/nodes/programming?id=programminglanguage)
-- [`Frameworks`](https://succeun.github.io/sysgram.js/#/nodes/programming?id=programmingframework)
-- [`Programs`](https://succeun.github.io/sysgram.js/#/nodes/program)
- 
+
+## Supported Providers: 
+
+![aws provider](https://img.shields.io/badge/AWS-orange?logo=amazon-aws&color=ff9900) 
+![azure provider](https://img.shields.io/badge/Azure-orange?logo=microsoft-azure&color=0089d6) 
+![gcp provider](https://img.shields.io/badge/GCP-orange?logo=google-cloud&color=4285f4) 
+![ibm provider](https://img.shields.io/badge/IBM-orange?logo=ibm&color=052FAD) 
+![kubernetes provider](https://img.shields.io/badge/Kubernetes-orange?logo=kubernetes&color=326ce5) 
+![alibaba cloud provider](https://img.shields.io/badge/AlibabaCloud-orange?logo=alibaba-cloud&color=ff6a00) 
+![oracle cloud provider](https://img.shields.io/badge/OracleCloud-orange?logo=oracle&color=f80000) 
+![openstack provider](https://img.shields.io/badge/OpenStack-orange?logo=openstack&color=da1a32) 
+![firebase provider](https://img.shields.io/badge/Firebase-orange?logo=firebase&color=FFCA28) 
+![digital ocean provider](https://img.shields.io/badge/DigitalOcean-0080ff?logo=digitalocean&color=0080ff)
+![elastic provider](https://img.shields.io/badge/Elastic-orange?logo=elastic&color=005571) 
+![outscale provider](https://img.shields.io/badge/OutScale-orange?color=5f87bf) 
+![on premise provider](https://img.shields.io/badge/OnPremise-orange?color=5f87bf) 
+![generic provider](https://img.shields.io/badge/Generic-orange?color=5f87bf) 
+![programming provider](https://img.shields.io/badge/Programming-orange?color=5f87bf) 
+![saas provider](https://img.shields.io/badge/SaaS-orange?color=5f87bf)
+
+
+
 # Installation
 
 ## CDN
@@ -71,7 +74,8 @@ Doing so will command the sysgram parser to look for the `<div>` tags with `clas
 
 From these tags sysgram will try to read the diagram definitons and render them into `<svg>`.
 
-Or 함수를 전달하여 `<div>`와 같은 특정 태그로 결과를 나타낼 수 있습니다.
+Or you can displayed a result with `<div>` tags from javascript function.
+
 ```html
 <script src="../dist/sysgram.bundle.js"></script>
 <script>
@@ -98,6 +102,7 @@ npm run dev
 After executing this command, open [http://localhost:4000/examples/](http://localhost:4000/examples/) in the browser.
 
 
+
 # basic.html
 
 Below is the most basic and simple example html.
@@ -121,6 +126,7 @@ Diagram("Simple Diagram", function() {
 </body>
 </html>
 ```
+
 
 
 # Example Diagram
@@ -183,6 +189,8 @@ Diagram("Message Collecting", () => {
 ![Message Collecting](https://succeun.github.io/sysgram.js/images/complex_diagram.png)
 
 **Examples can be found in** [examples](https://succeun.github.io/sysgram.js/#/getting-started/examples), [advanced examples](https://succeun.github.io/sysgram.js/#/getting-started/advanced_examples)
+
+
 
 ## Credits
 
