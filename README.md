@@ -99,7 +99,7 @@ When developing locally, you must have a local web server due to [hpcc-js/wasm](
 ```bash
 npm run dev
 ```
-After executing this command, open [http://localhost:4000/examples/](http://localhost:4000/examples/) in the browser.
+After executing this command, open [http://localhost:4000/docs/examples/basic.html](http://localhost:4000/docs/examples/basic.html) in the browser.
 
 
 
