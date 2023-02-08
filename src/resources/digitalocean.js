@@ -1,3 +1,5 @@
+import util from './util';
+
 function getResources() {
 	var resources = {
 		baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
@@ -48,27 +50,7 @@ function getResources() {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	function merge(src, node) {
-		for (var x in node) {
-			var aliase = node[x];
-			if (aliase) {
-				if (typeof aliase == "string") {
-					var obj = src[x];
-					if (obj) {
-						src[aliase] = obj;
-					}
-				} else {
-					if (src[x]) {
-						merge(src[x], node[x]);
-					} else {
-						src[x] = node[x];
-					}
-				}
-			}
-		}
-	}
-	
-	merge(resources, ALIASES);
+	util.merge(resources, ALIASES);
 	
 	return resources;
 }

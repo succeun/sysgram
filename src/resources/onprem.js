@@ -1,3 +1,5 @@
+import util from './util';
+
 function getResources() {
 	var resources = {
 		baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
@@ -127,6 +129,7 @@ function getResources() {
 				SyslogNg: "syslog-ng.png",
 			},
 			mlops: {
+				Mlflow: "mlflow.png",
 				Polyaxon: "polyaxon.png",
 			},
 			monitoring: {
@@ -181,10 +184,14 @@ function getResources() {
 			queue: {
 				Activemq: "activemq.png",
 				Celery: "celery.png",
+				Emqx: "emqx.png",
 				Kafka: "kafka.png",
 				Nats: "nats.png",
 				Rabbitmq: "rabbitmq.png",
 				Zeromq: "zeromq.png",
+			},
+			registry: {
+				Harbor: "harbor.png",
 			},
 			search: {
 				Solr: "solr.png",
@@ -272,6 +279,7 @@ function getResources() {
 			},
 			queue: {
 				Activemq: "ActiveMQ",
+				Emqx: "EMQX",
 				Rabbitmq: "RabbitMQ",
 				Zeromq: "ZeroMQ",
 			},
@@ -288,27 +296,7 @@ function getResources() {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	function merge(src, node) {
-		for (var x in node) {
-			var aliase = node[x];
-			if (aliase) {
-				if (typeof aliase == "string") {
-					var obj = src[x];
-					if (obj) {
-						src[aliase] = obj;
-					}
-				} else {
-					if (src[x]) {
-						merge(src[x], node[x]);
-					} else {
-						src[x] = node[x];
-					}
-				}
-			}
-		}
-	}
-	
-	merge(resources, ALIASES);
+	util.merge(resources, ALIASES);
 	
 	return resources;
 }

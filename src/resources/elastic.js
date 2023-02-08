@@ -1,22 +1,45 @@
+import util from './util';
+
 function getResources() {
 	var resources = {
 		baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
 		
 		elastic: {
+			agent: {
+				Agent: "agent.png",
+				Endpoint: "endpoint.png",
+				Fleet: "fleet.png",
+				Integrations: "integrations.png",
+			},
+			beats: {
+				APM: "apm.png",
+				Auditbeat: "auditbeat.png",
+				Filebeat: "filebeat.png",
+				Functionbeat: "functionbeat.png",
+				Heartbeat: "heartbeat.png",
+				Metricbeat: "metricbeat.png",
+				Packetbeat: "packetbeat.png",
+				Winlogbeat: "winlogbeat.png",
+			},
 			elasticsearch: {
 				Alerting: "alerting.png",
 				Beats: "beats.png",
 				Elasticsearch: "elasticsearch.png",
 				Kibana: "kibana.png",
+				LogstashPipeline: "logstash-pipeline.png",
 				Logstash: "logstash.png",
 				MachineLearning: "machine-learning.png",
+				MapServices: "map-services.png",
 				Maps: "maps.png",
 				Monitoring: "monitoring.png",
+				SearchableSnapshots: "searchable-snapshots.png",
 				SecuritySettings: "security-settings.png",
 				Sql: "sql.png",
+				Stack: "stack.png",
 			},
 			enterprisesearch: {
 				AppSearch: "app-search.png",
+				Crawler: "crawler.png",
 				EnterpriseSearch: "enterprise-search.png",
 				SiteSearch: "site-search.png",
 				WorkplaceSearch: "workplace-search.png",
@@ -40,6 +63,7 @@ function getResources() {
 				Endpoint: "endpoint.png",
 				Security: "security.png",
 				SIEM: "siem.png",
+				Xdr: "xdr.png",
 			}
 		},
 	};
@@ -57,27 +81,7 @@ function getResources() {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	function merge(src, node) {
-		for (var x in node) {
-			var aliase = node[x];
-			if (aliase) {
-				if (typeof aliase == "string") {
-					var obj = src[x];
-					if (obj) {
-						src[aliase] = obj;
-					}
-				} else {
-					if (src[x]) {
-						merge(src[x], node[x]);
-					} else {
-						src[x] = node[x];
-					}
-				}
-			}
-		}
-	}
-	
-	merge(resources, ALIASES);
+	util.merge(resources, ALIASES);
 	
 	return resources;
 }

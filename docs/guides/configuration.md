@@ -132,7 +132,6 @@ All settings can be changed within each diagram through the `Context` object.
 Also, properties can be defined through the last parameter of `Diagram`, `Cluster`, `Node`, and `Edge`.
 
 ```js
-ctx.attributes.graphviz.engine = "circo"
 ctx.attributes.graphviz.zoom = false
 ctx.attributes.digraph.rankdir = "TB"
 ctx.attributes.edge.color = "red"

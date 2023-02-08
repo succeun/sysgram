@@ -1,6 +1,6 @@
 {
 	"name": "sysgram.js",
-	"version": "0.1.2",
+	"version": "0.1.5",
 	"description": "Sysgram.js draw the system architecture using JavaScript.",
 	"main": "dist/sysgram.bundle.js",
 	"unpkg": "dist/sysgram.min.bundle.js",
@@ -10,8 +10,7 @@
 	"scripts": {
 		"docs": "docsify serve ./docs",
 		"dev": "http-server -p 40000",
-		"build": "webpack && npm run copy:wasm && npm run copy:dist",
-		"copy:wasm": "cpx -p node_modules/@hpcc-js/wasm/dist/graphvizlib.wasm ./dist",
+		"build": "webpack && npm run copy:dist",
 		"copy:dist": "cpx -p ./dist/* ./docs/dist"
 	},
 	"repository": {
@@ -35,19 +34,19 @@
 	},
 	"homepage": "https://succeun.github.io/sysgram.js",
 	"dependencies": {
-		"canvg": "3.0.7",
-		"d3": "6.7.0",
-		"d3-graphviz": "4.0.0"
+		"canvg": "4.0.1",
+		"d3": "^7.8.0",
+		"d3-graphviz": "5.0.2"
 	},
 	"devDependencies": {
-		"@babel/core": "7.14.6",
-		"@babel/preset-env": "7.14.5",
-		"babel-loader": "8.2.2",
-		"clean-webpack-plugin": "4.0.0-alpha.0",
+		"@babel/core": "7.20.12",
+		"@babel/preset-env": "7.20.2",
+		"babel-loader": "9.1.2",
+		"clean-webpack-plugin": "4.0.0",
 		"cpx": "^1.5.0",
-		"docsify": "^4.4.3",
-		"http-server": "^0.12.3",
-		"webpack": "5.39.1",
-		"webpack-cli": "4.7.2"
+		"docsify": "^4.13.0",
+		"http-server": "^14.1.1",
+		"webpack": "5.75.0",
+		"webpack-cli": "5.0.1"
 	}
 }

@@ -1,3 +1,5 @@
+import util from './util';
+
 function getResources() {
 	var resources = {
 		baseUrl: "https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/",
@@ -7,6 +9,7 @@ function getResources() {
 				Newrelic: "newrelic.png",
 				Opsgenie: "opsgenie.png",
 				Pushover: "pushover.png",
+				Xmatters: " xmatters.png",
 			},
 			analytics: {
 				Snowflake: "snowflake.png",
@@ -15,14 +18,20 @@ function getResources() {
 			cdn: {
 				Akamai: "akamai.png",
 				Cloudflare: "cloudflare.png",
+				Fastly: "fastly.png",
 			},
 			chat: {
 				Discord: "discord.png",
+				Line: "line.png",
 				Mattermost: "mattermost.png",
+				Messenger: "messenger.png",
 				RocketChat: "rocket-chat.png",
 				Slack: "slack.png",
 				Teams: "teams.png",
 				Telegram: "telegram.png",
+			},
+			communication: {
+				Twilio: "twilio.png",
 			},
 			filesharing: {
 				Nextcloud: "nextcloud.png",
@@ -63,27 +72,7 @@ function getResources() {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	function merge(src, node) {
-		for (var x in node) {
-			var aliase = node[x];
-			if (aliase) {
-				if (typeof aliase == "string") {
-					var obj = src[x];
-					if (obj) {
-						src[aliase] = obj;
-					}
-				} else {
-					if (src[x]) {
-						merge(src[x], node[x]);
-					} else {
-						src[x] = node[x];
-					}
-				}
-			}
-		}
-	}
-	
-	merge(resources, ALIASES);
+	util.merge(resources, ALIASES);
 	
 	return resources;
 }

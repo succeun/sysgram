@@ -15,6 +15,7 @@
 
 - Nodes
 
+  - [All Provider](nodes/all-provider.md)
   - [OnPrem](nodes/onprem.md)
   - [AWS](nodes/aws.md)
   - [Azure](nodes/azure.md)
